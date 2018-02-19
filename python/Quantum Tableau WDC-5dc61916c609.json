@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "quantum-tableau-wdc",
+  "private_key_id": "5dc61916c609c6362cea22549c43f1615567d6e8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsK1MUN78m2j9T\nZM7ROkpuD4N6ykqW9QPQcexR3Hm60RttZIIiltZ3YJC1CdtAIbh4CrdFVdiBoNeK\nWa4we+0CufLbmv6T8rrMD1FgSxMr58J453oJhqOOovoIBLoH1Mcw3MU2QBmWfIbY\nuxaAQefNXHBuN2mESeJOHI4FvY8lndUPx/MaxkTeQuvHjvnJY4CFIGpWBjjlxSsp\ngSYa71ni2uUE8xxeeKyI0lHECi4RZXvEvqeWruqhYhszU6dOzzXDfyRczGJA05Vu\nJ0Vo8QUb6/BTKC2iNnAcEc46YvdVytLim4GpU7r4jof8Haaj55J+3yNMt3GPAo9f\nVzLV20j/AgMBAAECggEAD6jtKJSdfWIyilpL+Xns1S/yDJQjzrFAhJAoJ5X/OH/W\nl8+hipXfsgIFh4H7AE1Q4xJOcy8Iv1mq4Tmg/2X2O94/+buSVlCorvDhvPl3J/Iv\nnSGo1v75F3s5dMtBRH8VExuxkGqqKSbwePwjYs0b0XEMBOpjXZX+0I4GWP1R7ODU\nvRlrI8Ou+uMxup8cvWVaWyCbRtGvyeZpDZAx/DpVRixGp2pJHUoCRF/cjz1JuwdX\nSw4hawhTFF/xwUoPlCdvyLAiMozc2Zw5Rte+owfDNguwoPzUD9HPAUa8tfytYK1P\noNirlTo5LUsKKu1z1gs9WXtdQgY5KlStdvlUMeojoQKBgQDv6wW9pjx3h+gRQedn\nM5xKQWBAY2JZpOQlf71Bs3slH7AxMSch3IgXtFMd/Dx+cpPv+X4wsjWun6D1riV5\nlw9p7EEv1GySzsNyIKePNdC5DU+cB2CH+ow6wfdZoIUxo/ufIWy7VV6kTfabWMiL\nFOSXAJiOuTktNm0zlYiaTMzBMQKBgQC3tbyolckzexvpWKd4n7zUadheMdCjcpoI\n4p1jomek9ULNb7FUU1aYw74T6QzRUbpMbo56BUCVhNL2qARw4DQYn1+ANMGUrOVI\nZ7HlEDGuBlOM05kMe3qsx9dJ7LwsRuM+p/XwYFWHCIyyGrH3dnyAjSWx7zRvWpvP\nJ94BkgShLwKBgQCgVQrIG9Dq/Kss5UMUp9v5j8kYHpK6X8SL/trmjmBshcnEhhml\nunBEjyDAuDFhO4b751rahi3z3f++T7wBjt8hJV7G7QoF7iGVIpd30DoFgQzDs/Zh\nySFvnvKDNg/tBa6BQOAeLUYLPYLhfCrBL5w4AZDySHwaZ/YAdB0PKOXo8QKBgAWj\nGv3lUr40qd+YK9Nku2udL9l8F9XcH2PkaEX1Zs7GA92/7qYSxJZ9cyizPwRxSJEt\n10thO+EaqUqOT0yTZKXYxhpuA/6m64Y0QF4yCAQ6B3hLyed7JoGExFNtYzzMlA6J\nIt/UZOt21LJmZU2doiZjrmNuXqKIGj3aEFLmAyRbAoGAUYg73+d9zRojvfn1WkAg\nScbxMxfsIfNIW5dgbNjxJf7pFPNJ4QWs/+KT13ZKxZcf3NGunZdhDJjZZCOC1Fiw\nP3IXYvJuJ2RSWfUfgOUYZOw8sdeG1kcGRP5JZafh/zNHPjG5ud1QY3DePD5S0oQM\nQuA5OIqXsMC4CiEz5FkszMU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "quantum-tableau-wdc@appspot.gserviceaccount.com",
+  "client_id": "110296037258545520735",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/quantum-tableau-wdc%40appspot.gserviceaccount.com"
+}
