@@ -3,6 +3,8 @@ edward | 2018-02-19
 
 scripts to obtain GDELT data in quasi-realtime from Google Big-Query into a local PostgreSQL database
 
+GDELT data can be queried online here: https://bigquery.cloud.google.com/table/gdelt-bq:full.events?pli=1
+
 Python Setup
 ------------
 current interpreter: Python 3.6.3
@@ -35,7 +37,13 @@ python3 update.py
 update data from globaleventid {} to latest
 python3 update.py event_lb=21312323
 
+ZeroMQ Testers
+--------------
 
+1) pub/sub
+clear && math.rand n:1000 d:uniform 1:1 2:10 | file.cat s:1000 | python3 zeromq.pub.py
+
+clear && python3 zeromq.sub.py
 
 
 
