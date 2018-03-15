@@ -1,72 +1,87 @@
 # gdelt.timeline.R
-# test reading GDELT data from R; plot a bar chart from summary data
-# GDELT 2.0 is stored in Google BiqQuery
+# show timelines for a single country, reading from the local PostgreSQL database
+# edward | 2018-03-04
 
-# edward | 2018-01-31 
-
-#install.packages('bigrquery')
-library(bigrquery)
 library(dplyr)
+library("RPostgreSQL")#install.packages("RPostgreSQL")
+
+# verify arguments
+stopifnot( sum(ls() == 'db.host') == 1 )
+stopifnot( sum(ls() == 'country') == 1 )
 
 # constants
-project <- 'quantum-tableau-wdc'  # put your projectID here; obtained from the Google Developer Console
-
-path <- '/Users/edward/Dropbox/eth/coss/Gdelt'
-
-#query.filename <- 'tone.ch.timeline.sql'
-#query.filename <- 'goldstein.ch.timeline.sql'
-
-query.filename <- 'tone.gr.timeline.sql'
-
 now <- Sys.time()
+path <- '/Users/edward/Documents/workspace/DIAS-GDELT'
+query <- 'tone.1country.timeline.sql'
+
+query.filename <- paste(path,'R', 'sql',query,sep='/')
+
+# database settings
+db.schema <- 'dias'
+db.port <- 5432
+db.user <- 'postgres'
+db.pwd <- 'postgres'
+psql.drv <- dbDriver("PostgreSQL")
+
+# plot settings
+db.rows <- 5000 # number of (most recent) rows to retrieve from database
 
 # debug
 use.cache <- FALSE
-
-view.df <- FALSE
-
+view.df <- TRUE
 
 # files + folders
 setwd(path)
 stopifnot( file.exists(query.filename))
 
-
 # read SQL from file
-sql <- paste( readLines( query.filename ), collapse = ' ')
+sql.template <- paste( readLines( query.filename ), collapse = ' ')
+
+# replace tokens
+sql <- gsub( '<country>', toupper(country), sql.template )
+sql <- gsub( '<num.rows>', db.rows, sql )
+
 
 # run query
 # importantü the first time this is run it will require an authentication (will open a webpage)
 if( !use.cache | sum(ls() == 'df') != 1 )
 {
   print('executing query')
-  df <- query_exec(sql, project)
+  # creates a connection to the postgres database
+  # note that "con" will be used later in each connection to the database
+  db.con <- dbConnect(psql.drv, dbname = db.schema,
+                      host = db.host, port = db.port,
+                      user = db.user, password = db.pwd)
+  
+  
+  df <- dbGetQuery(db.con, sql)
+  
   nrows <- nrow(df)
   print(sprintf('data retrieved : %s', nrows))
+  
+  # important to disconnect as a maximum of 16 open connections
+  dbDisconnect(db.con)
 }else
 {
   print('using cached data')
 }
 
-
-# convert sqldate to an R date
-df$dt <- strptime( df$SQLDATE, "%Y%m%d" )
-
 # debug
 if( view.df )
   View(df)
 
-# plot
-ylim.all <- c( range(df$avg_metric), range(df$min_metric), range(df$max_metric) )
-ylim <- c( min(ylim.all), max(ylim.all) )
 
-plot( df$dt, 
-      df$avg_metric, 
+# rebase global event id to 0
+min.event.id <- min(df$globaleventid)
+df %>% mutate( event.rebase = globaleventid - min.event.id) -> df.plot
+
+# plot
+plot( df.plot$event.rebase, 
+      df.plot$avgtone, 
       type = 'l', 
-      main = paste('GDELT 2.0', query.filename, now, sep=' | '),
-      ylim = ylim,
+      main = paste('GDELT 2.0', 'Avg Tone for Country', country, min(df$sqldate), max(df$sqldate), now, sep=' | '),
+      xlab = paste( 'globaleventid \n (rebeased to', min.event.id,')' )
       )
 
-lines( df$dt, df$min_metric, col= 2)
-lines( df$dt, df$max_metric, col= 3)
 
-legend('topleft', legend = c('avg', 'min', 'max'), col=seq(1,3), pch=1)
+legend('topleft', legend = country, col=1, pch=1)

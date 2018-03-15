@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="java/lib/postgresql-42.1.4.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/msgs"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gson"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jeromq"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

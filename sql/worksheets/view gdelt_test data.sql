@@ -13,6 +13,7 @@ SELECT
     ,MAX(dt) AS max_dt
     ,MAX(sqldate) AS max_sqldate
     ,MAX(globaleventid) AS max_globaleventid
+    ,MAX(peer) AS peer
     ,COUNT(*) 
 FROM 
     gdelt

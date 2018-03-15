@@ -1,0 +1,99 @@
+platform :  Darwin
+current_time_str :  2018-03-04 04:58:28
+connected to PostgreSQL
+retrieving last globaleventid from database
+last_event_db : 735458477
+globaleventid_lb : 735458478
+zmq context created
+zmq socket created
+Connect succeeded
+query : SELECT
+  globaleventid, sqldate, ActionGeo_CountryCode, AvgTone
+  ,DENSE_RANK() OVER (ORDER BY ActionGeo_CountryCode) AS peer
+
+FROM `gdelt-bq.full.events`
+WHERE ActionGeo_CountryCode IN
+(
+  'SZ','AU','BE','BU','HR','CY','EZ','DK','EN','FI','FR',
+  'GM','GR','HU','EI','IT','LG','LH','LU','MT','NL','PL',
+  'PO','RO','LO','SI','SP','SW','UK'
+)
+AND
+   globaleventid >= 735458478
+ORDER BY globaleventid ASC;
+
+
+connected to BigQuery
+query_job.state : RUNNING
+
+query_job.state : DONE
+rows returned : 0
+no data returned
+disconnected from PostgreSQL
+disconnected from ZeroMQ
+platform :  Darwin
+current_time_str :  2018-03-04 04:58:34
+connected to PostgreSQL
+retrieving last globaleventid from database
+last_event_db : 735458477
+globaleventid_lb : 735458478
+zmq context created
+zmq socket created
+Connect succeeded
+query : SELECT
+  globaleventid, sqldate, ActionGeo_CountryCode, AvgTone
+  ,DENSE_RANK() OVER (ORDER BY ActionGeo_CountryCode) AS peer
+
+FROM `gdelt-bq.full.events`
+WHERE ActionGeo_CountryCode IN
+(
+  'SZ','AU','BE','BU','HR','CY','EZ','DK','EN','FI','FR',
+  'GM','GR','HU','EI','IT','LG','LH','LU','MT','NL','PL',
+  'PO','RO','LO','SI','SP','SW','UK'
+)
+AND
+   globaleventid >= 735458478
+ORDER BY globaleventid ASC;
+
+
+connected to BigQuery
+query_job.state : RUNNING
+
+query_job.state : DONE
+rows returned : 0
+no data returned
+disconnected from PostgreSQL
+disconnected from ZeroMQ
+platform :  Darwin
+current_time_str :  2018-03-04 04:58:39
+connected to PostgreSQL
+retrieving last globaleventid from database
+last_event_db : 735458477
+globaleventid_lb : 735458478
+zmq context created
+zmq socket created
+Connect succeeded
+query : SELECT
+  globaleventid, sqldate, ActionGeo_CountryCode, AvgTone
+  ,DENSE_RANK() OVER (ORDER BY ActionGeo_CountryCode) AS peer
+
+FROM `gdelt-bq.full.events`
+WHERE ActionGeo_CountryCode IN
+(
+  'SZ','AU','BE','BU','HR','CY','EZ','DK','EN','FI','FR',
+  'GM','GR','HU','EI','IT','LG','LH','LU','MT','NL','PL',
+  'PO','RO','LO','SI','SP','SW','UK'
+)
+AND
+   globaleventid >= 735458478
+ORDER BY globaleventid ASC;
+
+
+connected to BigQuery
+query_job.state : RUNNING
+
+query_job.state : DONE
+rows returned : 0
+no data returned
+disconnected from PostgreSQL
+disconnected from ZeroMQ
