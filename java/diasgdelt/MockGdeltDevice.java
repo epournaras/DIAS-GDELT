@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Queue;
+import java.util.Set;
 
 import org.zeromq.ZMQ;
 
@@ -34,7 +35,8 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 
-public class MockGdeltDevice {
+public class MockGdeltDevice 
+{
 
     
 	static private final ZMQ.Context 				zmqContext = ZMQ.context(2);
@@ -49,8 +51,8 @@ public class MockGdeltDevice {
     public static void main(String[] args) throws SQLException, IOException 
     {
         
-        /*
-         System.out.printf("MockGdeltDevice (2018-03-12)\n" );
+        
+        System.out.printf("MockGdeltDevice (2018-03-18)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
@@ -62,10 +64,11 @@ public class MockGdeltDevice {
 									gatway_port = Integer.parseInt(args [1]);
 									
 		final		String			gateway_host = args [2],
-									gdelt_warmup_table = "gdelt";
-		*/
+									gdelt_warmup_table = "gdelt_test";
+		
+		/*
         
-    	System.out.printf("MockGdeltDevice (2018-03-14 - dev version)\n" );
+    	System.out.printf("MockGdeltDevice (2018-03-18 - dev version)\n" );
     	
     	final 		int				device_id = 1,
 									gatway_port = 3427;
@@ -77,7 +80,7 @@ public class MockGdeltDevice {
         System.out.printf("gatway_port : %d\n", gatway_port );
         System.out.printf("gateway_host : %s\n", gateway_host );
         System.out.printf("gdelt_warmup_table : %s\n", gdelt_warmup_table );
-    	
+    	*/
     	// params
         // description about this peer
         SensorAgentDescription 		sensorAgentDescription = new SensorAgentDescription( "dev#" + device_id, 1);
@@ -88,22 +91,15 @@ public class MockGdeltDevice {
         
         
         
-        final int					peerTimeoutMs = 240,	
+        final int					peerTimeoutMs = 12 * 60 * 1000,	
         							gdeltSelectedSubscribePort = 5555,		// subscribe to real-time GDELT data on this port
-        							possibleStatesSampleSize = 1000,
+        							possibleStatesSampleSize = 27,
         							numberPossibleStates = 9;
         
         System.out.printf("peerTimeoutMs : %d\n", peerTimeoutMs );
         System.out.printf("gdeltSelectedSubscribePort : %d\n", gdeltSelectedSubscribePort );
         System.out.printf("possibleStatesSampleSize : %d\n", possibleStatesSampleSize );
         System.out.printf("numberPossibleStates : %d\n", numberPossibleStates );
-        
-        // ----------------------------------
-        // create instances of helper classes
-        // ----------------------------------
-        
-        
-        System.out.printf("helper classes created\n" );
         
         // -------------------------------
         // compute initial possible states
@@ -114,43 +110,56 @@ public class MockGdeltDevice {
         // using the values from the sensor stored in the database
         final String        database = "dias";
         
-        final String 		sql = "SELECT * FROM " + gdelt_warmup_table + " WHERE peer = " + device_id + " ORDER BY globaleventid DESC LIMIT " + possibleStatesSampleSize;
+        // important: make sure the data arrives in ascending temporal order
+        final String 		sql = "WITH w_data AS (SELECT * FROM " + gdelt_warmup_table + " WHERE peer = " + device_id + " ORDER BY globaleventid DESC LIMIT " + possibleStatesSampleSize + ") SELECT * FROM w_data ORDER BY globaleventid ASC";
         System.out.printf("sql : %s\n", sql );
         
-        // TOOD: use a circular buffer
-        Queue<Double>		dataQueue = new LinkedList<Double>();
+        // the data of the sensor
+        ArrayList<Double>				dataQueue = new ArrayList<Double>();
         
         databaseWarmup(database, sql, dataQueue);
+        
+        System.out.printf("dataQueue.size for initial possible states : %d\n", dataQueue.size() );
         
         ArrayList<SensorState>			possibleStates = null;
         
         SensorState						selectedState = null;
         
-        if( dataQueue.size() >=  possibleStatesSampleSize )
+        // compute initial set of possible states
+        // note that we need to have the exact number of observations in the arraylist, which is an outcome of the SQL that generates the warmup set
+        // indeed, if the SQL returns too much data, then we don't know with 100% certainty which data to crop here
+        if( dataQueue.size() >  possibleStatesSampleSize )
         {
-        	// crop queue
-        	while( dataQueue.size() > possibleStatesSampleSize)
-        		dataQueue.poll();
-        	
-        	System.out.printf("dataQueue.size for initial possible states", dataQueue.size() );
+        	throw new RuntimeException( "Too much data retrieved in queue, expected " + possibleStatesSampleSize + ", queue contains " + dataQueue.size() );
+        }
+        else if( dataQueue.size() ==  possibleStatesSampleSize )
+        {
+        	System.out.printf("dataQueue.size() : %d\n", dataQueue.size() );
         	
         	// compute initial possible states
         	possibleStates = convertStates(computePossibleStates(dataQueue, numberPossibleStates));
+        	assert(possibleStates!=null);
         	
         	System.out.printf("initial possibleStates : %s\n", possibleStates.toString() );
+        	System.out.printf("dataQueue.size() : %d\n", dataQueue.size() );
         	
-        	// TODO: compute initial selectedState based on queue value
-        	selectedState = possibleStates.get(0);
+        	final double 	lastValueInQueue = dataQueue.get(possibleStatesSampleSize - 1);
+        	System.out.printf("lastValueInQueue : %f\n", lastValueInQueue );
+        	
+        	// compute initial selectedState based on queue value
+        	selectedState = computeSelectedState( possibleStates, lastValueInQueue);
+        	assert(selectedState!=null);
         	
         	System.out.printf("initial selectedState : %s\n", selectedState.toString() );
         	
         	// clear queue
         	dataQueue.clear();
+        	System.out.printf( "Data queue cleared\n" );
         	
         }
         else
         {
-        	System.err.printf("warning: no possible states/selected state generated during warmup\n" );
+        	System.err.printf("warning: no possible states/selected state generated during warmup (not enough data)\n" );
         	System.out.printf("dataQueue.size : %d\n", dataQueue.size() );
         }
         
@@ -200,7 +209,7 @@ public class MockGdeltDevice {
        		 Integer.toString(peerTimeoutMs) 
        		 );
 		
-		sendMsgPeer( zmqPeerSocket, gson.toJson(setPeerTimeoutMessage).toString() );
+		sendMsgPeer( zmqPeerSocket, gson.toJson(setPeerTimeoutMessage).toString(), "TimeoutMs" );
 		
 		System.out.printf( "Timeout sent, set to %d\n", peerTimeoutMs );
 		
@@ -211,11 +220,20 @@ public class MockGdeltDevice {
 		
 		if( possibleStates != null )
 		{
+			assert(selectedState!=null);
+			assert(aggregationStarted == false);
+			
+			// tell peer to start aggregating; this will also send the possible and selected state
 			startAggregation( zmqPeerSocket, possibleStates, selectedState, sensorAgentDescription, sensorDescription );
+			
+			System.out.printf( "Initial start aggregation sent\n" );
+			
 			aggregationStarted = true;
 		}
 		else
-			System.out.printf( "Aggregation has not yet started : aggregationStarted = %b\n", aggregationStarted );
+			System.out.printf( "Aggregation has not yet started\n" );
+		
+		System.out.printf( "aggregationStarted = %b\n", aggregationStarted );
         
         // ------------------------------
         // listen for new selected states
@@ -227,7 +245,8 @@ public class MockGdeltDevice {
 		System.out.printf( "gdeletConnectString : %s\n", gdeletConnectString );
 		
 		ZMQ.Socket			zmqGDELTSocket = zmqContext.socket(ZMQ.SUB);
-		zmqGDELTSocket.subscribe("");
+		//zmqGDELTSocket.subscribe(""); // ZeroMQ 4
+		zmqGDELTSocket.subscribe("".getBytes()); // ZeroMQ 3 
 		
 		zmqGDELTSocket.connect(gdeletConnectString);
 		
@@ -258,67 +277,90 @@ public class MockGdeltDevice {
 					
 					// extract selected state value
 					final double 	latestGDELTValue = Double.valueOf(dict.get("AvgTone"));
-					
 					System.out.printf("AvgTone : %f\n",  latestGDELTValue );
-					
-					// update selected state
-					if( aggregationStarted )
-					{
-						// TODO: compute initial selectedState based on queue value
-			        	selectedState = possibleStates.get(0);
-			        	System.out.printf("selectedState : %s\n", selectedState);
-					
-						SelectedStateMessage				selectedStateMsg = new SelectedStateMessage( selectedState, sensorAgentDescription,sensorDescription );
-						
-						// add as a JSON string to the list of messages to send
-						sendMsgPeer( zmqPeerSocket, gson.toJson(selectedStateMsg).toString() );
-						
-						System.out.printf( "Selected state sent\n" );
-						 
-					}
 					
 					// add value to data queue
 					dataQueue.add(latestGDELTValue);
 					
-					// if enough data, compute new possible states
-					if( dataQueue.size() ==  possibleStatesSampleSize )
+					final int		queueSize = dataQueue.size();
+					System.out.printf("queueSize : %d\n",  queueSize );
+					
+					final double 	lastValueInQueue = dataQueue.get(queueSize - 1);
+		        	System.out.printf("lastValueInQueue : %f\n", lastValueInQueue );
+					
+					assert( dataQueue.size() <=  possibleStatesSampleSize);	// check we did not miss an evaluation, or forget to clear the queue after new possible states
+					
+					// if enough data, compute new possible states, and a new selected state derived from the new possible states
+					// else compute new selected state if possible states were previously calculated
+					// else wait until queue is filled so that initial possible states can be filled
+					if( dataQueue.size() <  possibleStatesSampleSize )
+					{
+						if( aggregationStarted )
+						{
+							assert(possibleStates!=null);
+							// compute new selectedState based on queue value
+				        	selectedState = computeSelectedState( possibleStates, lastValueInQueue);
+				        	System.out.printf("new selectedState : %s\n", selectedState.toString() );
+				        	
+							SelectedStateMessage				selectedStateMsg = new SelectedStateMessage( selectedState, sensorAgentDescription,sensorDescription );
+							
+							// add as a JSON string to the list of messages to send
+							sendMsgPeer( zmqPeerSocket, gson.toJson(selectedStateMsg).toString(), "Selected State" );
+							
+							System.out.printf( "New selected state sent\n" );
+							 
+						}
+						else
+							System.out.printf( "Queue still warmimg up, waiting to compute possible states: %d / %d\n", dataQueue.size(), possibleStatesSampleSize );
+					
+					}
+					else if( dataQueue.size() ==  possibleStatesSampleSize )
 			        {
-			        	// crop queue
-			        	while( dataQueue.size() > possibleStatesSampleSize)
-			        		dataQueue.poll();
-			        	
-			        	System.out.printf("computing new possible states, queue size : %d\n", dataQueue.size() );
+						String		update_type = (aggregationStarted ? "updated" : "new" );
+						
+			        	System.out.printf("computing %s possible states, queue size : %d\n", update_type, dataQueue.size() );
 			        	
 			        	// compute possible states
 			        	possibleStates = convertStates(computePossibleStates(dataQueue, numberPossibleStates));
+			        	assert(possibleStates != null);
 			        	
-			        	System.out.printf("updated possibleStates : %s\n", possibleStates.toString() );
-			        	
-			        	// clear queue
-			        	dataQueue.clear();
-			        	
-			        	// send possible states
-			    		PossibleStatesMessage			updatedPossibleStatesMessage = new  PossibleStatesMessage( possibleStates,  sensorAgentDescription, sensorDescription );
+			        	System.out.printf("%s possibleStates : %s\n", update_type, possibleStates.toString() );
 			    		
-			    		// add as a JSON string to the list of messages to send
-			    		sendMsgPeer( zmqPeerSocket, gson.toJson(updatedPossibleStatesMessage).toString() );
-			       	 
-			    		System.out.printf( "Updated possible states sent\n" );
+				        // compute new selectedState based on queue value
+				        selectedState = computeSelectedState( possibleStates, lastValueInQueue);
+				        assert(selectedState!=null);
+				        System.out.printf("%s selectedState : %s\n",update_type,  selectedState.toString() );
+				        	
+				        if( aggregationStarted )
+				        {
+				        	// send possible states
+				    		PossibleStatesMessage			updatedPossibleStatesMessage = new  PossibleStatesMessage( possibleStates,  sensorAgentDescription, sensorDescription );
+				    		
+				    		sendMsgPeer( zmqPeerSocket, gson.toJson(updatedPossibleStatesMessage).toString(), "Possible States" );
+				       	 
+				    		System.out.printf( "Possible states sent\n" );
+				    		
+				    		  // send selected state
+					        SelectedStateMessage				selectedStateMsg = new SelectedStateMessage( selectedState, sensorAgentDescription,sensorDescription );
+					        
+							sendMsgPeer( zmqPeerSocket, gson.toJson(selectedStateMsg).toString(), "Selected State" );
+							
+							System.out.printf( "%s selected state sent\n", update_type);
+				        }
+				        else
+						{
+				        	// tell peer to start aggregating; this will also send the possible and selected state
+							startAggregation( zmqPeerSocket, possibleStates, selectedState, sensorAgentDescription, sensorDescription );
+							aggregationStarted = true;
+							
+							System.out.printf( "Start Aggregation sent\n" );
+						}
+						
+				        // clear queue
+			        	dataQueue.clear();
+			        	System.out.printf( "Data queue cleared\n" );
 			        	
 			        }// data queue is full
-					else
-						System.out.printf( "Queue still warmimg up : %d\n", dataQueue.size() );
-					
-					// it is possible that aggregation was not yet started, typically because there was not enough data during warmup
-					if( !aggregationStarted && (possibleStates != null))
-					{
-						// TODO: compute initial selectedState based on queue value
-			        	selectedState = possibleStates.get(0);
-			        	
-						startAggregation( zmqPeerSocket, possibleStates, selectedState, sensorAgentDescription, sensorDescription );
-						aggregationStarted = true;
-					}
-					
 				}// message for us
 				
 				// wait
@@ -329,7 +371,6 @@ public class MockGdeltDevice {
 					
 				} catch (InterruptedException e) 
 				{
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				*/
@@ -344,6 +385,50 @@ public class MockGdeltDevice {
         
     }// main
     
+    static private SensorState computeSelectedState( ArrayList<SensorState> possibleStates, double selectedStateValue )
+    {
+    	System.out.printf("--- computeSelectedState ---\n" );
+    	System.out.printf("selectedStateValue : %f\n", selectedStateValue );
+    	
+    	double 			min_distance = Double.MAX_VALUE;
+    	
+    	final int		numPossibleStates = possibleStates.size();
+    	System.out.printf("numPossibleStates : %d\n", numPossibleStates );
+    	
+    	SensorState		selectedState = null;
+    	
+    	for( int i = 0; i < numPossibleStates; i++ )
+    	{
+    		// DIAS can have multi-dimensional states; current implementation is single-dimensional
+    		LinkedHashMap<String,Object> 	stateValues = possibleStates.get(i).stateValues;
+    		
+    		if( stateValues.size() != 1 )
+    			throw new RuntimeException( "single dimensional state expected for possible state " + i + ", found " + stateValues.size() + " dimensions" );
+    		
+    		Set<String>		keys = possibleStates.get(i).stateValues.keySet();
+    		
+    		assert(keys.size() == stateValues.size());
+    		assert(keys.size() == 1 );
+    		
+    		String 			key = keys.iterator().next();
+    		//System.out.printf("key : %s\n", key );
+    		
+    		final double 	possible_state_value = (double) stateValues.get(key),
+    						this_distance = Math.abs(possible_state_value - selectedStateValue);
+    		
+    		if( this_distance < min_distance)
+    		{
+    			selectedState = possibleStates.get(i);
+    			min_distance = this_distance;
+    			
+    		}
+    	}
+    	
+    	System.out.printf("selectedState : %s\n", selectedState.toString() );
+    	
+    	return selectedState;
+    }
+    
     static private void startAggregation( ZMQ.Socket			zmqPeerSocket
     									,ArrayList<SensorState> possibleStates
     									,SensorState selectedState 
@@ -355,17 +440,17 @@ public class MockGdeltDevice {
     
     	// send possible states
 		PossibleStatesMessage			possibleStatesMessage = new  PossibleStatesMessage( possibleStates,  	sensorAgentDescription, sensorDescription );
-		sendMsgPeer( zmqPeerSocket, gson.toJson(possibleStatesMessage).toString() );
+		sendMsgPeer( zmqPeerSocket, gson.toJson(possibleStatesMessage).toString(), "Possible States" );
 		System.out.printf( "Possible states sent\n" );
 	
 	
 		// send selected states
 		SelectedStateMessage				selectedStateMsg = new SelectedStateMessage( selectedState, sensorAgentDescription,sensorDescription );
-		sendMsgPeer( zmqPeerSocket, gson.toJson(selectedStateMsg).toString() );
+		sendMsgPeer( zmqPeerSocket, gson.toJson(selectedStateMsg).toString(), "Selected State" );
 		System.out.printf( "Selected state sent\n" );
 		
 		// start aggregation 
-		sendMsg( zmqPeerSocket, gson.toJson(new StartAggregationMessage(sensorAgentDescription)));
+		sendMsgPeer( zmqPeerSocket, gson.toJson(new StartAggregationMessage(sensorAgentDescription)), "Start Aggregation");
 		System.out.printf( "Aggregation start sent\n" );
 		 
 	
@@ -401,9 +486,9 @@ public class MockGdeltDevice {
 		return data;
     }
     
-    static private void sendMsgPeer( ZMQ.Socket socket, String msg )
+    static private void sendMsgPeer( ZMQ.Socket socket, String msg, String mtype_description )
     {
-    	System.out.printf( "sending message to peer..." );
+    	System.out.printf( "sending  '%s' message to peer...", mtype_description );
 		sendMsg(socket, msg);
 		System.out.printf( "ok\n" );
 		 
@@ -428,7 +513,7 @@ public class MockGdeltDevice {
 	   	boolean 					return_value  = false;
 	 	if( ackMessage.ackText.compareTo( "OK" ) == 0 ) 		// either OK or NOK
 	 	{
-	 		System.out.printf( "peer responded with OK\n" );
+	 		System.out.printf( "peer responded with OK ('%s')\n", mtype_description );
 	 		return_value = true;;
 	 	}
 	 	else if( ackMessage.ackText.compareTo( "NOK") != 0 )
@@ -528,10 +613,13 @@ public class MockGdeltDevice {
     // convertStates: convert array of doubles to a arraylist of sensorstates 
     static private ArrayList<SensorState> convertStates( double []possibleStatesVectorDoubles )
     {
+    	System.out.printf("--- convertStates ---\n" );
+    	
     	if( possibleStatesVectorDoubles == null )
     		throw new RuntimeException( "possibleStatesVectorDoubles is null" );
     	
     	final int		numberPossibleStates = possibleStatesVectorDoubles.length;
+    	System.out.printf( "numberPossibleStates : %d\n", numberPossibleStates );
     	
         ArrayList<SensorState>			possibleStates = new ArrayList<SensorState>(numberPossibleStates);
         for( int j = 0; j < numberPossibleStates; j++ )
@@ -553,9 +641,9 @@ public class MockGdeltDevice {
     
     
     // databaseWarmup: read the most recent N sensor values from the database and return a queue of values that can be used to compute posssible states
-    static private void  databaseWarmup(String database, String sql, Queue<Double> queue)
+    static private void  databaseWarmup(String database, String sql, ArrayList<Double> queue)
     {
-    	final boolean 	debug = false;
+    	final boolean 	debug = true;
     	
     	try 
     	{
@@ -652,43 +740,32 @@ public class MockGdeltDevice {
         return connection;
     }
     
-    private static double[] computePossibleStates(Queue<Double> queue, int numberPossibleStates)
+    private static double[] computePossibleStates(ArrayList<Double> queue, int numberPossibleStates)
     {
+    	System.out.printf("--- computePossibleStates ---\n" );
+    	
     	double 	[]possibleStates = new double[numberPossibleStates];
     			
-    	double	[]values = new double[queue.size()];	
-    	
-    	double 	min = 100.0,
-    			max = -100.0;
+    	double 	min = Double.MAX_VALUE,
+    			max = -Double.MAX_VALUE;
 
-    	int		counter = 0;
+    	final int		num_observations = queue.size();
     	
-    	while( !queue.isEmpty())
+    	for( int i = 0; i < num_observations; i++ )
     	{
-    		final double value = queue.poll();
-    		values[counter++] = value;
+    		final double value = queue.get(i);
     		
     		max = Math.max(max, value);
     		min = Math.min(min, value);
     	}
     	
-    	System.out.printf("--- computePossibleStates ---\n" );
-    	
-    	
     	System.out.printf("min : %f\n", min );
     	System.out.printf("max : %f\n", max );
-    	System.out.printf("counter : %d\n", counter );
     	
     	possibleStates[0] = min;
     	for( int j = 1; j < numberPossibleStates; j++ )
-    	{
     		possibleStates[j] = possibleStates[j-1] + (max-min) / (double)(numberPossibleStates - 1.0);
-    		System.out.printf("%f ", possibleStates[j] );
-    		
-    	}
-    	System.out.printf("\n");
-    			
-    	
+
     	return possibleStates;
     	
     }
