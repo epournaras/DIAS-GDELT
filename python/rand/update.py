@@ -14,10 +14,6 @@ import platform
 # command line largs
 import argparse
 
-# Google BigQuery
-from google.cloud import bigquery
-
-
 # writing to PostgreSQL
 import psycopg2
 

@@ -9,33 +9,33 @@ numberPossibleStates : 9
 --- Warmup ---
 sql : WITH w_data AS (SELECT * FROM gdelt_test WHERE peer = 1 ORDER BY globaleventid DESC LIMIT 27) SELECT * FROM w_data ORDER BY globaleventid ASC
 Connected to database
-23829 20180318 0 1 6999 2018-03-18 09:50:43 AU -3.0 
-23857 20180318 0 1 7027 2018-03-18 09:50:43 AU -1.0 
-23885 20180318 0 1 7055 2018-03-18 09:50:43 AU -8.0 
-23901 20180318 0 1 7072 2018-03-18 09:51:51 AU -5.0 
-23929 20180318 0 1 7100 2018-03-18 09:51:51 AU 1.0 
-23957 20180318 0 1 7128 2018-03-18 09:51:51 AU 1.0 
-23985 20180318 0 1 7156 2018-03-18 09:51:51 AU -5.0 
-24001 20180318 0 1 7173 2018-03-18 09:52:59 AU -4.0 
-24029 20180318 0 1 7201 2018-03-18 09:52:59 AU 1.0 
-24057 20180318 0 1 7229 2018-03-18 09:52:59 AU -10.0 
-24085 20180318 0 1 7257 2018-03-18 09:52:59 AU 8.0 
-24101 20180318 0 1 7274 2018-03-18 09:54:08 AU 5.0 
-24129 20180318 0 1 7302 2018-03-18 09:54:08 AU -5.0 
-24157 20180318 0 1 7330 2018-03-18 09:54:08 AU 1.0 
-24185 20180318 0 1 7358 2018-03-18 09:54:08 AU -2.0 
-24201 20180318 0 1 7375 2018-03-18 09:55:16 AU -7.0 
-24229 20180318 0 1 7403 2018-03-18 09:55:16 AU 0.0 
-24257 20180318 0 1 7431 2018-03-18 09:55:16 AU -6.0 
-24285 20180318 0 1 7459 2018-03-18 09:55:16 AU -1.0 
-24301 20180318 0 1 7476 2018-03-18 09:56:23 AU -3.0 
-24329 20180318 0 1 7504 2018-03-18 09:56:23 AU -10.0 
-24357 20180318 0 1 7532 2018-03-18 09:56:23 AU -10.0 
-24385 20180318 0 1 7560 2018-03-18 09:56:23 AU 5.0 
-24401 20180318 0 1 7577 2018-03-18 09:57:31 AU -7.0 
-24429 20180318 0 1 7605 2018-03-18 09:57:31 AU -6.0 
-24457 20180318 0 1 7633 2018-03-18 09:57:31 AU -9.0 
-24485 20180318 0 1 7661 2018-03-18 09:57:31 AU 3.0 
+24529 20180318 0 1 7706 2018-03-18 09:58:40 AU 0.0 
+24557 20180318 0 1 7734 2018-03-18 09:58:40 AU -8.0 
+24585 20180318 0 1 7762 2018-03-18 09:58:40 AU -6.0 
+24601 20180318 0 1 7779 2018-03-18 09:59:49 AU -10.0 
+24629 20180318 0 1 7807 2018-03-18 09:59:49 AU 0.0 
+24657 20180318 0 1 7835 2018-03-18 09:59:49 AU -5.0 
+24685 20180318 0 1 7863 2018-03-18 09:59:49 AU -7.0 
+24701 20180318 0 1 7880 2018-03-18 10:00:57 AU -2.0 
+24729 20180318 0 1 7908 2018-03-18 10:00:57 AU -6.0 
+24757 20180318 0 1 7936 2018-03-18 10:00:57 AU 1.0 
+24785 20180318 0 1 7964 2018-03-18 10:00:57 AU 4.0 
+24801 20180318 0 1 7981 2018-03-18 10:02:05 AU -2.0 
+24829 20180318 0 1 8009 2018-03-18 10:02:05 AU -4.0 
+24857 20180318 0 1 8037 2018-03-18 10:02:05 AU 8.0 
+24885 20180318 0 1 8065 2018-03-18 10:02:05 AU -8.0 
+24901 20180318 0 1 8082 2018-03-18 10:03:14 AU -8.0 
+24929 20180318 0 1 8110 2018-03-18 10:03:14 AU -5.0 
+24957 20180318 0 1 8138 2018-03-18 10:03:14 AU 1.0 
+24985 20180318 0 1 8166 2018-03-18 10:03:14 AU -2.0 
+25001 20180318 0 1 8183 2018-03-18 10:04:22 AU 3.0 
+25029 20180318 0 1 8211 2018-03-18 10:04:22 AU 8.0 
+25057 20180318 0 1 8239 2018-03-18 10:04:22 AU 10.0 
+25085 20180318 0 1 8267 2018-03-18 10:04:22 AU -4.0 
+25101 20180318 0 1 8284 2018-03-18 10:05:30 AU 8.0 
+25129 20180318 0 1 8312 2018-03-18 10:05:30 AU 4.0 
+25157 20180318 0 1 8340 2018-03-18 10:05:30 AU -6.0 
+25185 20180318 0 1 8368 2018-03-18 10:05:30 AU 5.0 
 Disconnected from database
 Records processed during warmup : 27
 Queue size : 27
@@ -43,26 +43,26 @@ dataQueue.size for initial possible states : 27
 dataQueue.size() : 27
 --- computePossibleStates ---
 min : -10.000000
-max : 8.000000
+max : 10.000000
 --- convertStates ---
 numberPossibleStates : 9
-initial possibleStates : [SensorState: stateID=0({x.1=-10.0}), SensorState: stateID=1({x.1=-7.75}), SensorState: stateID=2({x.1=-5.5}), SensorState: stateID=3({x.1=-3.25}), SensorState: stateID=4({x.1=-1.0}), SensorState: stateID=5({x.1=1.25}), SensorState: stateID=6({x.1=3.5}), SensorState: stateID=7({x.1=5.75}), SensorState: stateID=8({x.1=8.0})]
+initial possibleStates : [SensorState: stateID=0({x.1=-10.0}), SensorState: stateID=1({x.1=-7.5}), SensorState: stateID=2({x.1=-5.0}), SensorState: stateID=3({x.1=-2.5}), SensorState: stateID=4({x.1=0.0}), SensorState: stateID=5({x.1=2.5}), SensorState: stateID=6({x.1=5.0}), SensorState: stateID=7({x.1=7.5}), SensorState: stateID=8({x.1=10.0})]
 dataQueue.size() : 27
-lastValueInQueue : 3.000000
+lastValueInQueue : 5.000000
 --- computeSelectedState ---
-selectedStateValue : 3.000000
+selectedStateValue : 5.000000
 numPossibleStates : 9
-selectedState : SensorState: stateID=6({x.1=3.5})
-initial selectedState : SensorState: stateID=6({x.1=3.5})
+selectedState : SensorState: stateID=6({x.1=5.0})
+initial selectedState : SensorState: stateID=6({x.1=5.0})
 Data queue cleared
 
 --- Connecting to Gateway ---
 connecting to gateway tcp://localhost:3427...ok
-peerAddressRequestMessageJson : {"timeStamp":"2018-03-18 09:58:20","MessageType":"PeerAddressRequest","srcSensorAgent":{"Host":"dev#1","Port":1},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
+peerAddressRequestMessageJson : {"timeStamp":"2018-03-18 10:06:18","MessageType":"PeerAddressRequest","srcSensorAgent":{"Host":"dev#1","Port":1},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
 sending address request to gateway...ok
 
 waiting for response...ok
-incomingMessage : {"peerId":11,"peerFinger":"localhost:49164","timeStamp":"2018-03-18 09:58:20","MessageType":"PeerAddress","srcSensorAgent":{"Host":"localhost","Port":3427},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
+incomingMessage : {"peerId":11,"peerFinger":"localhost:49164","timeStamp":"2018-03-18 10:06:18","MessageType":"PeerAddress","srcSensorAgent":{"Host":"localhost","Port":3427},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
 disconnecting...ok
 guiMessage : MessageType:PeerAddress|srcSensorAgent:localhost:3427|targetSensorAgent:*:0|targetSensor:*
 mtype : PeerAddress
@@ -102,9 +102,845 @@ aggregationStarted = true
 --- Listening to new selected states ---
 gdeletConnectString : tcp://127.0.0.1:5555
 
-Msg 1 : {'dt': '2018-03-18 09:58:40', 'peer': 1, 'globaleventid': 7762, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -6.0}
-AvgTone : -6.000000
+Msg 1 : {'dt': '2018-03-18 10:06:38', 'peer': 1, 'globaleventid': 8469, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 8.0}
+AvgTone : 8.000000
 queueSize : 1
+lastValueInQueue : 8.000000
+--- computeSelectedState ---
+selectedStateValue : 8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 2 : {'dt': '2018-03-18 10:07:47', 'peer': 1, 'globaleventid': 8570, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 10.0}
+AvgTone : 10.000000
+queueSize : 2
+lastValueInQueue : 10.000000
+--- computeSelectedState ---
+selectedStateValue : 10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=8({x.1=10.0})
+new selectedState : SensorState: stateID=8({x.1=10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 3 : {'dt': '2018-03-18 10:08:56', 'peer': 1, 'globaleventid': 8671, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 5.0}
+AvgTone : 5.000000
+queueSize : 3
+lastValueInQueue : 5.000000
+--- computeSelectedState ---
+selectedStateValue : 5.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 4 : {'dt': '2018-03-18 10:10:04', 'peer': 1, 'globaleventid': 8772, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -10.0}
+AvgTone : -10.000000
+queueSize : 4
+lastValueInQueue : -10.000000
+--- computeSelectedState ---
+selectedStateValue : -10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 5 : {'dt': '2018-03-18 10:11:12', 'peer': 1, 'globaleventid': 8873, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 7.0}
+AvgTone : 7.000000
+queueSize : 5
+lastValueInQueue : 7.000000
+--- computeSelectedState ---
+selectedStateValue : 7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 6 : {'dt': '2018-03-18 10:12:20', 'peer': 1, 'globaleventid': 8974, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -10.0}
+AvgTone : -10.000000
+queueSize : 6
+lastValueInQueue : -10.000000
+--- computeSelectedState ---
+selectedStateValue : -10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 7 : {'dt': '2018-03-18 10:13:29', 'peer': 1, 'globaleventid': 9075, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 7.0}
+AvgTone : 7.000000
+queueSize : 7
+lastValueInQueue : 7.000000
+--- computeSelectedState ---
+selectedStateValue : 7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 8 : {'dt': '2018-03-18 10:14:37', 'peer': 1, 'globaleventid': 9176, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 2.0}
+AvgTone : 2.000000
+queueSize : 8
+lastValueInQueue : 2.000000
+--- computeSelectedState ---
+selectedStateValue : 2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=2.5})
+new selectedState : SensorState: stateID=5({x.1=2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 9 : {'dt': '2018-03-18 10:15:46', 'peer': 1, 'globaleventid': 9277, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -3.0}
+AvgTone : -3.000000
+queueSize : 9
+lastValueInQueue : -3.000000
+--- computeSelectedState ---
+selectedStateValue : -3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 10 : {'dt': '2018-03-18 10:16:54', 'peer': 1, 'globaleventid': 9378, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -7.0}
+AvgTone : -7.000000
+queueSize : 10
+lastValueInQueue : -7.000000
+--- computeSelectedState ---
+selectedStateValue : -7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 11 : {'dt': '2018-03-18 10:18:02', 'peer': 1, 'globaleventid': 9479, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 9.0}
+AvgTone : 9.000000
+queueSize : 11
+lastValueInQueue : 9.000000
+--- computeSelectedState ---
+selectedStateValue : 9.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=8({x.1=10.0})
+new selectedState : SensorState: stateID=8({x.1=10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 12 : {'dt': '2018-03-18 10:19:11', 'peer': 1, 'globaleventid': 9580, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 12
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 13 : {'dt': '2018-03-18 10:20:19', 'peer': 1, 'globaleventid': 9681, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -9.0}
+AvgTone : -9.000000
+queueSize : 13
+lastValueInQueue : -9.000000
+--- computeSelectedState ---
+selectedStateValue : -9.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 14 : {'dt': '2018-03-18 10:21:28', 'peer': 1, 'globaleventid': 9782, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -2.0}
+AvgTone : -2.000000
+queueSize : 14
+lastValueInQueue : -2.000000
+--- computeSelectedState ---
+selectedStateValue : -2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 15 : {'dt': '2018-03-18 10:22:36', 'peer': 1, 'globaleventid': 9883, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -1.0}
+AvgTone : -1.000000
+queueSize : 15
+lastValueInQueue : -1.000000
+--- computeSelectedState ---
+selectedStateValue : -1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=0.0})
+new selectedState : SensorState: stateID=4({x.1=0.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 16 : {'dt': '2018-03-18 10:23:45', 'peer': 1, 'globaleventid': 9984, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -8.0}
+AvgTone : -8.000000
+queueSize : 16
+lastValueInQueue : -8.000000
+--- computeSelectedState ---
+selectedStateValue : -8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 17 : {'dt': '2018-03-18 10:24:53', 'peer': 1, 'globaleventid': 10085, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 17
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 18 : {'dt': '2018-03-18 10:26:01', 'peer': 1, 'globaleventid': 10186, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 18
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 19 : {'dt': '2018-03-18 10:27:10', 'peer': 1, 'globaleventid': 10287, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 10.0}
+AvgTone : 10.000000
+queueSize : 19
+lastValueInQueue : 10.000000
+--- computeSelectedState ---
+selectedStateValue : 10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=8({x.1=10.0})
+new selectedState : SensorState: stateID=8({x.1=10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 20 : {'dt': '2018-03-18 10:28:18', 'peer': 1, 'globaleventid': 10388, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 1.0}
+AvgTone : 1.000000
+queueSize : 20
+lastValueInQueue : 1.000000
+--- computeSelectedState ---
+selectedStateValue : 1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=0.0})
+new selectedState : SensorState: stateID=4({x.1=0.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 21 : {'dt': '2018-03-18 10:29:27', 'peer': 1, 'globaleventid': 10489, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 8.0}
+AvgTone : 8.000000
+queueSize : 21
+lastValueInQueue : 8.000000
+--- computeSelectedState ---
+selectedStateValue : 8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 22 : {'dt': '2018-03-18 10:30:35', 'peer': 1, 'globaleventid': 10590, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -1.0}
+AvgTone : -1.000000
+queueSize : 22
+lastValueInQueue : -1.000000
+--- computeSelectedState ---
+selectedStateValue : -1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=0.0})
+new selectedState : SensorState: stateID=4({x.1=0.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 23 : {'dt': '2018-03-18 10:31:43', 'peer': 1, 'globaleventid': 10691, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -6.0}
+AvgTone : -6.000000
+queueSize : 23
+lastValueInQueue : -6.000000
+--- computeSelectedState ---
+selectedStateValue : -6.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=2({x.1=-5.0})
+new selectedState : SensorState: stateID=2({x.1=-5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 24 : {'dt': '2018-03-18 10:32:51', 'peer': 1, 'globaleventid': 10792, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -8.0}
+AvgTone : -8.000000
+queueSize : 24
+lastValueInQueue : -8.000000
+--- computeSelectedState ---
+selectedStateValue : -8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 25 : {'dt': '2018-03-18 10:33:59', 'peer': 1, 'globaleventid': 10893, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 8.0}
+AvgTone : 8.000000
+queueSize : 25
+lastValueInQueue : 8.000000
+--- computeSelectedState ---
+selectedStateValue : 8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 26 : {'dt': '2018-03-18 10:35:07', 'peer': 1, 'globaleventid': 10994, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -3.0}
+AvgTone : -3.000000
+queueSize : 26
+lastValueInQueue : -3.000000
+--- computeSelectedState ---
+selectedStateValue : -3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 27 : {'dt': '2018-03-18 10:36:16', 'peer': 1, 'globaleventid': 11095, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 27
+lastValueInQueue : 4.000000
+computing updated possible states, queue size : 27
+--- computePossibleStates ---
+min : -10.000000
+max : 10.000000
+--- convertStates ---
+numberPossibleStates : 9
+updated possibleStates : [SensorState: stateID=0({x.1=-10.0}), SensorState: stateID=1({x.1=-7.5}), SensorState: stateID=2({x.1=-5.0}), SensorState: stateID=3({x.1=-2.5}), SensorState: stateID=4({x.1=0.0}), SensorState: stateID=5({x.1=2.5}), SensorState: stateID=6({x.1=5.0}), SensorState: stateID=7({x.1=7.5}), SensorState: stateID=8({x.1=10.0})]
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+updated selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Possible States' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Possible States')
+Possible states sent
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+updated selected state sent
+Data queue cleared
+
+Msg 28 : {'dt': '2018-03-18 10:37:24', 'peer': 1, 'globaleventid': 11196, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 1
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 29 : {'dt': '2018-03-18 10:38:32', 'peer': 1, 'globaleventid': 11297, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -7.0}
+AvgTone : -7.000000
+queueSize : 2
+lastValueInQueue : -7.000000
+--- computeSelectedState ---
+selectedStateValue : -7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 30 : {'dt': '2018-03-18 10:39:40', 'peer': 1, 'globaleventid': 11398, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -6.0}
+AvgTone : -6.000000
+queueSize : 3
+lastValueInQueue : -6.000000
+--- computeSelectedState ---
+selectedStateValue : -6.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=2({x.1=-5.0})
+new selectedState : SensorState: stateID=2({x.1=-5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 31 : {'dt': '2018-03-18 10:40:48', 'peer': 1, 'globaleventid': 11499, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 8.0}
+AvgTone : 8.000000
+queueSize : 4
+lastValueInQueue : 8.000000
+--- computeSelectedState ---
+selectedStateValue : 8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 32 : {'dt': '2018-03-18 10:41:57', 'peer': 1, 'globaleventid': 11600, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -4.0}
+AvgTone : -4.000000
+queueSize : 5
+lastValueInQueue : -4.000000
+--- computeSelectedState ---
+selectedStateValue : -4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=2({x.1=-5.0})
+new selectedState : SensorState: stateID=2({x.1=-5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 33 : {'dt': '2018-03-18 10:43:05', 'peer': 1, 'globaleventid': 11701, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 3.0}
+AvgTone : 3.000000
+queueSize : 6
+lastValueInQueue : 3.000000
+--- computeSelectedState ---
+selectedStateValue : 3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=2.5})
+new selectedState : SensorState: stateID=5({x.1=2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 34 : {'dt': '2018-03-18 10:44:13', 'peer': 1, 'globaleventid': 11802, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -10.0}
+AvgTone : -10.000000
+queueSize : 7
+lastValueInQueue : -10.000000
+--- computeSelectedState ---
+selectedStateValue : -10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 35 : {'dt': '2018-03-18 10:45:21', 'peer': 1, 'globaleventid': 11903, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 8
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 36 : {'dt': '2018-03-18 10:46:29', 'peer': 1, 'globaleventid': 12004, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 9
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 37 : {'dt': '2018-03-18 10:47:37', 'peer': 1, 'globaleventid': 12105, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 10
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 38 : {'dt': '2018-03-18 10:48:45', 'peer': 1, 'globaleventid': 12206, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -8.0}
+AvgTone : -8.000000
+queueSize : 11
+lastValueInQueue : -8.000000
+--- computeSelectedState ---
+selectedStateValue : -8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 39 : {'dt': '2018-03-18 10:49:53', 'peer': 1, 'globaleventid': 12307, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -10.0}
+AvgTone : -10.000000
+queueSize : 12
+lastValueInQueue : -10.000000
+--- computeSelectedState ---
+selectedStateValue : -10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 40 : {'dt': '2018-03-18 10:51:02', 'peer': 1, 'globaleventid': 12408, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -3.0}
+AvgTone : -3.000000
+queueSize : 13
+lastValueInQueue : -3.000000
+--- computeSelectedState ---
+selectedStateValue : -3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 41 : {'dt': '2018-03-18 10:52:10', 'peer': 1, 'globaleventid': 12509, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 2.0}
+AvgTone : 2.000000
+queueSize : 14
+lastValueInQueue : 2.000000
+--- computeSelectedState ---
+selectedStateValue : 2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=2.5})
+new selectedState : SensorState: stateID=5({x.1=2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 42 : {'dt': '2018-03-18 10:53:17', 'peer': 1, 'globaleventid': 12610, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 2.0}
+AvgTone : 2.000000
+queueSize : 15
+lastValueInQueue : 2.000000
+--- computeSelectedState ---
+selectedStateValue : 2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=2.5})
+new selectedState : SensorState: stateID=5({x.1=2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 43 : {'dt': '2018-03-18 10:54:25', 'peer': 1, 'globaleventid': 12711, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 5.0}
+AvgTone : 5.000000
+queueSize : 16
+lastValueInQueue : 5.000000
+--- computeSelectedState ---
+selectedStateValue : 5.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 44 : {'dt': '2018-03-18 10:55:32', 'peer': 1, 'globaleventid': 12812, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -9.0}
+AvgTone : -9.000000
+queueSize : 17
+lastValueInQueue : -9.000000
+--- computeSelectedState ---
+selectedStateValue : -9.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 45 : {'dt': '2018-03-18 10:56:41', 'peer': 1, 'globaleventid': 12913, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 3.0}
+AvgTone : 3.000000
+queueSize : 18
+lastValueInQueue : 3.000000
+--- computeSelectedState ---
+selectedStateValue : 3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=2.5})
+new selectedState : SensorState: stateID=5({x.1=2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 46 : {'dt': '2018-03-18 10:57:48', 'peer': 1, 'globaleventid': 13014, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 6.0}
+AvgTone : 6.000000
+queueSize : 19
+lastValueInQueue : 6.000000
+--- computeSelectedState ---
+selectedStateValue : 6.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=5.0})
+new selectedState : SensorState: stateID=6({x.1=5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 47 : {'dt': '2018-03-18 10:58:56', 'peer': 1, 'globaleventid': 13115, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -6.0}
+AvgTone : -6.000000
+queueSize : 20
+lastValueInQueue : -6.000000
+--- computeSelectedState ---
+selectedStateValue : -6.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=2({x.1=-5.0})
+new selectedState : SensorState: stateID=2({x.1=-5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 48 : {'dt': '2018-03-18 11:00:04', 'peer': 1, 'globaleventid': 13216, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 7.0}
+AvgTone : 7.000000
+queueSize : 21
+lastValueInQueue : 7.000000
+--- computeSelectedState ---
+selectedStateValue : 7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=7.5})
+new selectedState : SensorState: stateID=7({x.1=7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 49 : {'dt': '2018-03-18 11:01:12', 'peer': 1, 'globaleventid': 13317, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -5.0}
+AvgTone : -5.000000
+queueSize : 22
+lastValueInQueue : -5.000000
+--- computeSelectedState ---
+selectedStateValue : -5.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=2({x.1=-5.0})
+new selectedState : SensorState: stateID=2({x.1=-5.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 50 : {'dt': '2018-03-18 11:02:21', 'peer': 1, 'globaleventid': 13418, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -7.0}
+AvgTone : -7.000000
+queueSize : 23
+lastValueInQueue : -7.000000
+--- computeSelectedState ---
+selectedStateValue : -7.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=1({x.1=-7.5})
+new selectedState : SensorState: stateID=1({x.1=-7.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 51 : {'dt': '2018-03-18 11:03:28', 'peer': 1, 'globaleventid': 13519, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -2.0}
+AvgTone : -2.000000
+queueSize : 24
+lastValueInQueue : -2.000000
+--- computeSelectedState ---
+selectedStateValue : -2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 52 : {'dt': '2018-03-18 11:04:36', 'peer': 1, 'globaleventid': 13620, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -2.0}
+AvgTone : -2.000000
+queueSize : 25
+lastValueInQueue : -2.000000
+--- computeSelectedState ---
+selectedStateValue : -2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-2.5})
+new selectedState : SensorState: stateID=3({x.1=-2.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 53 : {'dt': '2018-03-18 11:05:43', 'peer': 1, 'globaleventid': 13721, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -1.0}
+AvgTone : -1.000000
+queueSize : 26
+lastValueInQueue : -1.000000
+--- computeSelectedState ---
+selectedStateValue : -1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=0.0})
+new selectedState : SensorState: stateID=4({x.1=0.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 54 : {'dt': '2018-03-18 11:06:51', 'peer': 1, 'globaleventid': 13822, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -1.0}
+AvgTone : -1.000000
+queueSize : 27
+lastValueInQueue : -1.000000
+computing updated possible states, queue size : 27
+--- computePossibleStates ---
+min : -10.000000
+max : 8.000000
+--- convertStates ---
+numberPossibleStates : 9
+updated possibleStates : [SensorState: stateID=0({x.1=-10.0}), SensorState: stateID=1({x.1=-7.75}), SensorState: stateID=2({x.1=-5.5}), SensorState: stateID=3({x.1=-3.25}), SensorState: stateID=4({x.1=-1.0}), SensorState: stateID=5({x.1=1.25}), SensorState: stateID=6({x.1=3.5}), SensorState: stateID=7({x.1=5.75}), SensorState: stateID=8({x.1=8.0})]
+--- computeSelectedState ---
+selectedStateValue : -1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=-1.0})
+updated selectedState : SensorState: stateID=4({x.1=-1.0})
+sending  'Possible States' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Possible States')
+Possible states sent
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+updated selected state sent
+Data queue cleared
+
+Msg 55 : {'dt': '2018-03-18 11:07:58', 'peer': 1, 'globaleventid': 13923, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 8.0}
+AvgTone : 8.000000
+queueSize : 1
+lastValueInQueue : 8.000000
+--- computeSelectedState ---
+selectedStateValue : 8.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=8({x.1=8.0})
+new selectedState : SensorState: stateID=8({x.1=8.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 56 : {'dt': '2018-03-18 11:09:06', 'peer': 1, 'globaleventid': 14024, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -10.0}
+AvgTone : -10.000000
+queueSize : 2
+lastValueInQueue : -10.000000
+--- computeSelectedState ---
+selectedStateValue : -10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=0({x.1=-10.0})
+new selectedState : SensorState: stateID=0({x.1=-10.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 57 : {'dt': '2018-03-18 11:10:14', 'peer': 1, 'globaleventid': 14125, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -2.0}
+AvgTone : -2.000000
+queueSize : 3
+lastValueInQueue : -2.000000
+--- computeSelectedState ---
+selectedStateValue : -2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=-1.0})
+new selectedState : SensorState: stateID=4({x.1=-1.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 58 : {'dt': '2018-03-18 11:11:22', 'peer': 1, 'globaleventid': 14226, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
+AvgTone : 4.000000
+queueSize : 4
+lastValueInQueue : 4.000000
+--- computeSelectedState ---
+selectedStateValue : 4.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=6({x.1=3.5})
+new selectedState : SensorState: stateID=6({x.1=3.5})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 59 : {'dt': '2018-03-18 11:12:30', 'peer': 1, 'globaleventid': 14327, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -6.0}
+AvgTone : -6.000000
+queueSize : 5
 lastValueInQueue : -6.000000
 --- computeSelectedState ---
 selectedStateValue : -6.000000
@@ -116,12 +952,96 @@ waiting for response...ok
 peer responded with OK ('Selected State')
 New selected state sent
 
-Msg 2 : {'dt': '2018-03-18 09:59:49', 'peer': 1, 'globaleventid': 7863, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -7.0}
-AvgTone : -7.000000
-queueSize : 2
-lastValueInQueue : -7.000000
+Msg 60 : {'dt': '2018-03-18 11:13:38', 'peer': 1, 'globaleventid': 14428, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 2.0}
+AvgTone : 2.000000
+queueSize : 6
+lastValueInQueue : 2.000000
 --- computeSelectedState ---
-selectedStateValue : -7.000000
+selectedStateValue : 2.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=1.25})
+new selectedState : SensorState: stateID=5({x.1=1.25})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 61 : {'dt': '2018-03-18 11:14:46', 'peer': 1, 'globaleventid': 14529, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 10.0}
+AvgTone : 10.000000
+queueSize : 7
+lastValueInQueue : 10.000000
+--- computeSelectedState ---
+selectedStateValue : 10.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=8({x.1=8.0})
+new selectedState : SensorState: stateID=8({x.1=8.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 62 : {'dt': '2018-03-18 11:15:53', 'peer': 1, 'globaleventid': 14630, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -1.0}
+AvgTone : -1.000000
+queueSize : 8
+lastValueInQueue : -1.000000
+--- computeSelectedState ---
+selectedStateValue : -1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=4({x.1=-1.0})
+new selectedState : SensorState: stateID=4({x.1=-1.0})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 63 : {'dt': '2018-03-18 11:17:01', 'peer': 1, 'globaleventid': 14731, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 5.0}
+AvgTone : 5.000000
+queueSize : 9
+lastValueInQueue : 5.000000
+--- computeSelectedState ---
+selectedStateValue : 5.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=7({x.1=5.75})
+new selectedState : SensorState: stateID=7({x.1=5.75})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 64 : {'dt': '2018-03-18 11:18:08', 'peer': 1, 'globaleventid': 14832, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -3.0}
+AvgTone : -3.000000
+queueSize : 10
+lastValueInQueue : -3.000000
+--- computeSelectedState ---
+selectedStateValue : -3.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=3({x.1=-3.25})
+new selectedState : SensorState: stateID=3({x.1=-3.25})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 65 : {'dt': '2018-03-18 11:19:16', 'peer': 1, 'globaleventid': 14933, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 1.0}
+AvgTone : 1.000000
+queueSize : 11
+lastValueInQueue : 1.000000
+--- computeSelectedState ---
+selectedStateValue : 1.000000
+numPossibleStates : 9
+selectedState : SensorState: stateID=5({x.1=1.25})
+new selectedState : SensorState: stateID=5({x.1=1.25})
+sending  'Selected State' message to peer...ok
+waiting for response...ok
+peer responded with OK ('Selected State')
+New selected state sent
+
+Msg 66 : {'dt': '2018-03-18 11:20:23', 'peer': 1, 'globaleventid': 15034, 'sqldate': '20180318', 'ActionGeo_CountryCode': 'AU', 'AvgTone': -8.0}
+AvgTone : -8.000000
+queueSize : 12
+lastValueInQueue : -8.000000
+--- computeSelectedState ---
+selectedStateValue : -8.000000
 numPossibleStates : 9
 selectedState : SensorState: stateID=1({x.1=-7.75})
 new selectedState : SensorState: stateID=1({x.1=-7.75})

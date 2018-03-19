@@ -13,7 +13,7 @@ CREATE TABLE gdelt
     -- DIAS fields
     -- DIAS fields directly into the database, for 1:1 mapping with the peers
     -- this saves a required mapping that would have to be done at a later stage
-    ,epoch BIGINT NOT NULL
+    ,epoch BIGINT 
     ,peer INTEGER NOT NULL
     
     -- GDELT fields
