@@ -10,7 +10,7 @@ set -u
 
 # verify arguments
 if [ -z $sleep_time_minutes ]; then echo "missing argument 1 : sleep_time_minutes"; exit 1; fi
-if [ -z num_rows ]; then echo "missing argument 2 : num_rows"; exit 1; fi
+if [ -z $num_rows ]; then echo "missing argument 2 : num_rows"; exit 1; fi
 
 echo "sleep_time_minutes : $sleep_time_minutes"
 echo "num_rows : num_rows"

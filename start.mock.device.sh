@@ -33,10 +33,12 @@ echo "gateway_port : $gateway_port"
 echo "gateway_host : $gateway_host"
 
 # classpath
-classpath_src="$eclipse_build_path:../gson/$eclipse_build_path:../jeromq3-x/$eclipse_build_path:../DIAS-GUI/integration-gui/msgs/$eclipse_build_path:lib/*"
+classpath_src="$eclipse_build_path:../gson/$eclipse_build_path:../jeromq/$eclipse_build_path:../DIAS-GUI/integration-gui/msgs/$eclipse_build_path:lib/*"
+#classpath_src="$eclipse_build_path:../gson/$eclipse_build_path:../jeromq3-x/$eclipse_build_path:../DIAS-GUI/integration-gui/msgs/$eclipse_build_path:lib/*"
 echo "classpath_src : $classpath_src"
 
-classpath_lib="$eclipse_build_path:lib/postgresql-42.1.4.jar:lib/gson.jar:lib/jeromq3.jar:lib/msgs.jar:lib/*"
+classpath_lib="$eclipse_build_path:lib/postgresql-42.1.4.jar:lib/gson.jar:lib/jeromq.jar:lib/msgs.jar:lib/*"
+#classpath_lib="$eclipse_build_path:lib/postgresql-42.1.4.jar:lib/gson.jar:lib/jeromq3.jar:lib/msgs.jar:lib/*"
 echo "classpath_lib : $classpath_lib"
 
 # test different flavors of the Mock Device

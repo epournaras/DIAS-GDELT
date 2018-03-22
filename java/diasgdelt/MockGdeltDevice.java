@@ -52,7 +52,7 @@ public class MockGdeltDevice
     {
         
         
-        System.out.printf("MockGdeltDevice (2018-03-18)\n" );
+        System.out.printf("MockGdeltDevice (2018-03-22 - jeromq4)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
@@ -241,14 +241,14 @@ public class MockGdeltDevice
 		
 		System.out.println( "\n--- Listening to new selected states ---" );
         
-		final String		gdeletConnectString = "tcp://127.0.0.1:" + gdeltSelectedSubscribePort;
-		System.out.printf( "gdeletConnectString : %s\n", gdeletConnectString );
+		final String		gdeltConnectString = "tcp://127.0.0.1:" + gdeltSelectedSubscribePort;
+		System.out.printf( "gdeltConnectString : %s\n", gdeltConnectString );
 		
 		ZMQ.Socket			zmqGDELTSocket = zmqContext.socket(ZMQ.SUB);
 		//zmqGDELTSocket.subscribe(""); // ZeroMQ 4
 		zmqGDELTSocket.subscribe("".getBytes()); // ZeroMQ 3 
 		
-		zmqGDELTSocket.connect(gdeletConnectString);
+		zmqGDELTSocket.connect(gdeltConnectString);
 		
 		long			msg_counter = 0;
 		

@@ -6,6 +6,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/msgs"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/gson"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Distributed-Systems-Utilities"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jeromq3-x"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jeromq"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
