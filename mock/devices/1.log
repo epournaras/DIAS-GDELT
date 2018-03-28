@@ -1,4 +1,4 @@
-MockGdeltDevice (2018-03-22 - jeromq4)
+MockGdeltDevice (2018-03-28 - jeromq4/gdeltv2)
 sensorAgentDescription : dev#1:1
 sensorDescription : SensorA
 peerTimeoutMs : 720000
@@ -7,72 +7,35 @@ possibleStatesSampleSize : 27
 numberPossibleStates : 9
 
 --- Warmup ---
-sql : WITH w_data AS (SELECT * FROM gdelt_test WHERE peer = 1 ORDER BY globaleventid DESC LIMIT 27) SELECT * FROM w_data ORDER BY globaleventid ASC
+sql : WITH w_data AS (SELECT * FROM gdeltv2 WHERE peer = 1 ORDER BY gkgrecordid DESC LIMIT 27) SELECT * FROM w_data ORDER BY gkgrecordid ASC
 Connected to database
-66785 20180319 0 1 50384 2018-03-19 07:03:09 AU 3.0 
-66801 20180319 0 1 50401 2018-03-19 07:04:16 AU -3.0 
-66829 20180319 0 1 50429 2018-03-19 07:04:16 AU 8.0 
-66857 20180319 0 1 50457 2018-03-19 07:04:16 AU 5.0 
-66885 20180319 0 1 50485 2018-03-19 07:04:16 AU -4.0 
-66901 20180319 0 1 50502 2018-03-19 07:05:23 AU 9.0 
-66929 20180319 0 1 50530 2018-03-19 07:05:23 AU 1.0 
-66957 20180319 0 1 50558 2018-03-19 07:05:23 AU -7.0 
-66985 20180319 0 1 50586 2018-03-19 07:05:23 AU 1.0 
-67001 20180322 0 1 50603 2018-03-22 21:56:49 AU -9.0 
-67029 20180322 0 1 50631 2018-03-22 21:56:49 AU -10.0 
-67051 20180322 0 1 50654 2018-03-22 21:57:56 AU 10.0 
-67079 20180322 0 1 50682 2018-03-22 21:57:56 AU 3.0 
-67101 20180322 0 1 50705 2018-03-22 21:59:02 AU 6.0 
-67129 20180322 0 1 50733 2018-03-22 21:59:02 AU -6.0 
-67151 20180322 0 1 50756 2018-03-22 22:00:09 AU -10.0 
-67179 20180322 0 1 50784 2018-03-22 22:00:09 AU 4.0 
-67201 20180322 0 1 50807 2018-03-22 22:01:15 AU -2.0 
-67229 20180322 0 1 50835 2018-03-22 22:01:15 AU -2.0 
-67251 20180322 0 1 50858 2018-03-22 22:02:21 AU 8.0 
-67279 20180322 0 1 50886 2018-03-22 22:02:21 AU -6.0 
-67301 20180322 0 1 50909 2018-03-22 22:03:28 AU -7.0 
-67329 20180322 0 1 50937 2018-03-22 22:03:28 AU 5.0 
-67351 20180322 0 1 50960 2018-03-22 22:04:34 AU -7.0 
-67379 20180322 0 1 50988 2018-03-22 22:04:34 AU -3.0 
-67401 20180322 0 1 51011 2018-03-22 22:05:41 AU 5.0 
-67429 20180322 0 1 51039 2018-03-22 22:05:41 AU 8.0 
+68 20180327 0 1 20180327161500-1001 2018-03-27 18:48:52 AU 1.6438356164383603 
+247 20180327 0 1 20180327161500-472 2018-03-27 18:48:52 AU 0.0 
+410 20180327 0 1 20180327164500-1728 2018-03-27 18:50:29 AU -0.384615384615385 
+333 20180327 0 1 20180327164500-737 2018-03-27 18:50:29 AU 1.8416206261510102 
 Disconnected from database
-Records processed during warmup : 27
-Queue size : 27
-dataQueue.size for initial possible states : 27
-dataQueue.size() : 27
---- computePossibleStates ---
-min : -10.000000
-max : 10.000000
---- convertStates ---
-numberPossibleStates : 9
-initial possibleStates : [SensorState: stateID=0({x.1=-10.0}), SensorState: stateID=1({x.1=-7.5}), SensorState: stateID=2({x.1=-5.0}), SensorState: stateID=3({x.1=-2.5}), SensorState: stateID=4({x.1=0.0}), SensorState: stateID=5({x.1=2.5}), SensorState: stateID=6({x.1=5.0}), SensorState: stateID=7({x.1=7.5}), SensorState: stateID=8({x.1=10.0})]
-dataQueue.size() : 27
-lastValueInQueue : 8.000000
---- computeSelectedState ---
-selectedStateValue : 8.000000
-numPossibleStates : 9
-selectedState : SensorState: stateID=7({x.1=7.5})
-initial selectedState : SensorState: stateID=7({x.1=7.5})
-Data queue cleared
+Records processed during warmup : 4
+Queue size : 4
+dataQueue.size for initial possible states : 4
+dataQueue.size : 4
 
 --- Connecting to Gateway ---
 connecting to gateway tcp://localhost:3427...ok
-peerAddressRequestMessageJson : {"timeStamp":"2018-03-22 22:05:57","MessageType":"PeerAddressRequest","srcSensorAgent":{"Host":"dev#1","Port":1},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
+peerAddressRequestMessageJson : {"timeStamp":"2018-03-28 06:47:24","MessageType":"PeerAddressRequest","srcSensorAgent":{"Host":"dev#1","Port":1},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
 sending address request to gateway...ok
 
 waiting for response...ok
-incomingMessage : {"peerId":11,"peerFinger":"localhost:61278","timeStamp":"2018-03-22 22:05:57","MessageType":"PeerAddress","srcSensorAgent":{"Host":"localhost","Port":3427},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
+incomingMessage : {"peerId":11,"peerFinger":"localhost:61088","timeStamp":"2018-03-28 06:47:24","MessageType":"PeerAddress","srcSensorAgent":{"Host":"localhost","Port":3427},"targetSensorAgent":{"Host":"*","Port":0},"targetSensor":{"sensorType":"*","SensorName":"*"}}
 disconnecting...ok
 guiMessage : MessageType:PeerAddress|srcSensorAgent:localhost:3427|targetSensorAgent:*:0|targetSensor:*
 mtype : PeerAddress
 
-*** Successfully bound with peer 11 (localhost:61278) ***
+*** Successfully bound with peer 11 (localhost:61088) ***
 peerId : 11
-peerFinger : localhost:61278
+peerFinger : localhost:61088
 
 --- Connecting to Peer ---
-peerConnectString : tcp://localhost:61278
+peerConnectString : tcp://localhost:61088
 Connected
 sending  'TimeoutMs' message to peer...ok
 waiting for response...ok
@@ -80,38 +43,14 @@ peer responded with OK ('TimeoutMs')
 Timeout sent, set to 720000
 
 ### CONNECTED WITH PEER ###
-
---- startAggregation ---
-sending  'Possible States' message to peer...ok
-waiting for response...ok
-peer responded with OK ('Possible States')
-Possible states sent
-sending  'Selected State' message to peer...ok
-waiting for response...ok
-peer responded with OK ('Selected State')
-Selected state sent
-sending  'Start Aggregation' message to peer...ok
-waiting for response...ok
-peer responded with OK ('Start Aggregation')
-Aggregation start sent
-
-### AGGREGATION STARTED ###
-Initial start aggregation sent
-aggregationStarted = true
+Aggregation has not yet started
+aggregationStarted = false
 
 --- Listening to new selected states ---
 gdeltConnectString : tcp://127.0.0.1:5555
 
-Msg 1 : {'dt': '2018-03-22 22:06:47', 'peer': 1, 'globaleventid': 51090, 'sqldate': '20180322', 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.0}
-AvgTone : 4.000000
-queueSize : 1
-lastValueInQueue : 4.000000
---- computeSelectedState ---
-selectedStateValue : 4.000000
-numPossibleStates : 9
-selectedState : SensorState: stateID=6({x.1=5.0})
-new selectedState : SensorState: stateID=6({x.1=5.0})
-sending  'Selected State' message to peer...ok
-waiting for response...ok
-peer responded with OK ('Selected State')
-New selected state sent
+Msg 1 : {'dt': '2018-03-28 06:56:07', 'peer': 1, 'gkgrecordid': '20180328050000-56', 'sqldate': 20180328, 'ActionGeo_CountryCode': 'AU', 'AvgTone': 5.69620253164557}
+AvgTone : 5.696203
+queueSize : 5
+lastValueInQueue : 5.696203
+Queue still warmimg up, waiting to compute possible states: 5 / 27

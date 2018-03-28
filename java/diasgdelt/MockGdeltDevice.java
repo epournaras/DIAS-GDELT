@@ -52,7 +52,7 @@ public class MockGdeltDevice
     {
         
         
-        System.out.printf("MockGdeltDevice (2018-03-22 - jeromq4)\n" );
+        System.out.printf("MockGdeltDevice (2018-03-28 - jeromq4/gdeltv2)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
@@ -64,7 +64,7 @@ public class MockGdeltDevice
 									gatway_port = Integer.parseInt(args [1]);
 									
 		final		String			gateway_host = args [2],
-									gdelt_warmup_table = "gdelt_test";
+									gdelt_warmup_table = "gdeltv2";
 		
 		/*
         
@@ -111,7 +111,7 @@ public class MockGdeltDevice
         final String        database = "dias";
         
         // important: make sure the data arrives in ascending temporal order
-        final String 		sql = "WITH w_data AS (SELECT * FROM " + gdelt_warmup_table + " WHERE peer = " + device_id + " ORDER BY globaleventid DESC LIMIT " + possibleStatesSampleSize + ") SELECT * FROM w_data ORDER BY globaleventid ASC";
+        final String 		sql = "WITH w_data AS (SELECT * FROM " + gdelt_warmup_table + " WHERE peer = " + device_id + " ORDER BY gkgrecordid DESC LIMIT " + possibleStatesSampleSize + ") SELECT * FROM w_data ORDER BY gkgrecordid ASC";
         System.out.printf("sql : %s\n", sql );
         
         // the data of the sensor
@@ -664,11 +664,11 @@ public class MockGdeltDevice
 	        	final int 		db_seq_id = rs.getInt("seq_id"),
 	        					sqlDate = rs.getInt("sqldate"),
 	        					epoch = rs.getInt("epoch"),
-	        					peer = rs.getInt("peer"),
-	        					globaleventid = rs.getInt("globaleventid");
+	        					peer = rs.getInt("peer");
 	        	
 	        	final String 	dt = rs.getString( "dt" ),
-	        					actiongeo_countrycode = rs.getString( "actiongeo_countrycode" );
+	        					actiongeo_countrycode = rs.getString( "actiongeo_countrycode" ),
+	        					gkgrecordid = rs.getString("gkgrecordid");
 	        	
 	        	final double 	avgtone = rs.getDouble("avgtone");
 	        	
@@ -678,7 +678,7 @@ public class MockGdeltDevice
 		            System.out.print(sqlDate+ " ");
 		            System.out.print(epoch + " ");
 		            System.out.print(peer + " ");
-		            System.out.print(globaleventid + " ");
+		            System.out.print(gkgrecordid + " ");
 		            System.out.print(dt + " ");
 		            System.out.print(actiongeo_countrycode + " ");
 		            System.out.print(avgtone + " ");

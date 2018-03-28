@@ -105,7 +105,7 @@ print('num_countries:',num_countries)
 
 # prepare output
 file_output = open(output_filename,'w')
-file_output.write('dt\tpeer\tglobaleventid\tsqldate\tActionGeo_CountryCode\tAvgTone\n')
+file_output.write('dt\tpeer\tgkgrecordid\tsqldate\tActionGeo_CountryCode\tAvgTone\n')
 
 # parse
 row_counter = 0
@@ -130,11 +130,11 @@ with open(filename) as f:
 		# the GKG system uses a date-oriented serial number.
 		# full date+time of the 15 minute update batch that this record was created in
 		# followed by a dash, followed by sequential numbering for all GKG records created as part of that update batch
-		globaleventid = fields[0]
-		print('globaleventid:', globaleventid)
+		gkgrecordid = fields[0]
+		print('gkgrecordid:', gkgrecordid)
 
 		# 2. sqldate; extract the YYYYMMDD from GKGRECORDID
-		sqldate = globaleventid[0:8]
+		sqldate = gkgrecordid[0:8]
 		print('sqldate:', sqldate)
 
 		# 3. AvgTone: extract field V1.5TONE (see the documentation GDELT-Global_Knowledge_Graph_Codebook-V2.1.pdf)
@@ -176,7 +176,7 @@ with open(filename) as f:
 
 					file_output.write(  str(dt) + '\t'
 										+ str(peer) + '\t'
-					                    + str(globaleventid) + '\t'
+					                    + str(gkgrecordid) + '\t'
 					                    + str(sqldate) + '\t'
 					                    + str(ActionGeo_CountryCode) + '\t'
 					                    + str(AvgTone) + '\n' )

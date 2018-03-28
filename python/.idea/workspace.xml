@@ -14,7 +14,7 @@
       <file leaf-file-name="auto.update.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rand/auto.update.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="627">
               <caret line="33" column="15" lean-forward="false" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
               <folding />
             </state>
@@ -36,18 +36,8 @@
       <file leaf-file-name="download.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/download.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-276">
-              <caret line="107" column="15" lean-forward="false" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="realtime.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/realtime.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="154" column="25" lean-forward="false" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="25" />
+            <state relative-caret-position="247">
+              <caret line="63" column="45" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="63" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -56,8 +46,8 @@
       <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gdeltv2/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="95">
+              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -66,8 +56,18 @@
       <file leaf-file-name="gkg.parse.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.parse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+            <state relative-caret-position="37">
+              <caret line="102" column="7" lean-forward="false" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180327161500.gkg.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gdeltv2/parsed/20180327161500.gkg.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -76,38 +76,28 @@
       <file leaf-file-name="update.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gdeltv2/update.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+            <state relative-caret-position="204">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gkg.download.latest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.download.latest.py">
+      <file leaf-file-name="auto.update.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto.update.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+            <state relative-caret-position="263">
+              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20180326044500.gkg.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gdeltv2/parsed/20180326044500.gkg.csv">
+      <file leaf-file-name="auto.update.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gdeltv2/auto.update.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="69" lean-forward="false" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gkg.publish.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.publish.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="68" />
+            <state relative-caret-position="120">
+              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -128,6 +118,7 @@
       <find>count_peers</find>
       <find>count_active_peers</find>
       <find>map_migrant_count</find>
+      <find>event</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -147,11 +138,15 @@
         <option value="$PROJECT_DIR$/rand/auto.update.sh" />
         <option value="$PROJECT_DIR$/rand/update.py" />
         <option value="$PROJECT_DIR$/realtime.py" />
-        <option value="$PROJECT_DIR$/gdeltv2/readme.txt" />
         <option value="$PROJECT_DIR$/gdeltv2/get.lastest.data.py" />
-        <option value="$PROJECT_DIR$/gdeltv2/gkg.parse.py" />
         <option value="$PROJECT_DIR$/gdeltv2/gkg.download.latest.py" />
+        <option value="$PROJECT_DIR$/gdeltv2/gkg.persist.py" />
+        <option value="$PROJECT_DIR$/gdeltv2/gkg.publish.py" />
+        <option value="$PROJECT_DIR$/gdeltv2/gkg.parse.py" />
+        <option value="$PROJECT_DIR$/gdeltv2/parsed/20180327161500.gkg.csv" />
         <option value="$PROJECT_DIR$/gdeltv2/update.sh" />
+        <option value="$PROJECT_DIR$/gdeltv2/auto.update.sh" />
+        <option value="$PROJECT_DIR$/gdeltv2/readme.txt" />
       </list>
     </option>
   </component>
@@ -188,18 +183,6 @@
               <item name="python" type="b2602c69:ProjectViewProjectNode" />
               <item name="python" type="462c0819:PsiDirectoryNode" />
               <item name="gdeltv2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="gdeltv2" type="462c0819:PsiDirectoryNode" />
-              <item name="downloads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python" type="462c0819:PsiDirectoryNode" />
-              <item name="gdeltv2" type="462c0819:PsiDirectoryNode" />
-              <item name="parsed" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -542,13 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto.update.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../DIAS-Development/analysis/event.log/python/aggregation.count.py" />
     <entry file="file://$PROJECT_DIR$/update.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -603,34 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/download.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276">
-          <caret line="107" column="15" lean-forward="false" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rand/auto.update.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="33" column="15" lean-forward="false" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gdeltv2/get.lastest.data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-947">
           <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gdeltv2/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -645,18 +597,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.parse.py">
+    <entry file="file://$PROJECT_DIR$/download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="105" column="16" lean-forward="false" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="63" column="45" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="63" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.publish.py">
+    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.download.latest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="47" column="68" lean-forward="false" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="68" />
+        <state relative-caret-position="-139">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -669,18 +621,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.download.latest.py">
+    <entry file="file://$PROJECT_DIR$/gdeltv2/log/2018-03-27-18:19:18.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="105">
+          <caret line="7" column="47" lean-forward="true" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/download.stat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="67" column="18" lean-forward="false" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        <state relative-caret-position="38">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.publish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="98" column="69" lean-forward="false" selection-start-line="98" selection-start-column="69" selection-end-line="98" selection-end-column="69" />
+          <folding>
+            <element signature="e#31#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="102" column="7" lean-forward="false" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/parsed/20180327161500.gkg.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rand/auto.update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="15" lean-forward="false" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/gkg.persist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="54" column="67" lean-forward="false" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="67" />
+          <folding>
+            <element signature="e#31#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto.update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/auto.update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdeltv2/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gdeltv2/update.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="35" column="11" lean-forward="true" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="36" />
           <folding />
         </state>
       </provider>
