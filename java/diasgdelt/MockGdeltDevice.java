@@ -52,7 +52,7 @@ public class MockGdeltDevice
     {
         
         
-        System.out.printf("MockGdeltDevice (2018-03-28 - jeromq4/gdeltv2)\n" );
+        System.out.printf("MockGdeltDevice (2018-04-03 - jeromq4/gdeltv2)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
@@ -91,7 +91,7 @@ public class MockGdeltDevice
         
         
         
-        final int					peerTimeoutMs = 12 * 60 * 1000,	
+        final int					peerTimeoutMs = -1,		// no timeout	
         							gdeltSelectedSubscribePort = 5555,		// subscribe to real-time GDELT data on this port
         							possibleStatesSampleSize = 27,
         							numberPossibleStates = 9;
@@ -244,6 +244,9 @@ public class MockGdeltDevice
 		final String		gdeltConnectString = "tcp://127.0.0.1:" + gdeltSelectedSubscribePort;
 		System.out.printf( "gdeltConnectString : %s\n", gdeltConnectString );
 		
+		System.out.printf("dataQueue.size : %d\n", dataQueue.size() );
+		System.out.printf("aggregationStarted : %b\n", aggregationStarted );
+		
 		ZMQ.Socket			zmqGDELTSocket = zmqContext.socket(ZMQ.SUB);
 		//zmqGDELTSocket.subscribe(""); // ZeroMQ 4
 		zmqGDELTSocket.subscribe("".getBytes()); // ZeroMQ 3 
@@ -283,7 +286,7 @@ public class MockGdeltDevice
 					dataQueue.add(latestGDELTValue);
 					
 					final int		queueSize = dataQueue.size();
-					System.out.printf("queueSize : %d\n",  queueSize );
+					System.out.printf("queueSize (after adding) : %d\n",  queueSize );
 					
 					final double 	lastValueInQueue = dataQueue.get(queueSize - 1);
 		        	System.out.printf("lastValueInQueue : %f\n", lastValueInQueue );
@@ -361,6 +364,14 @@ public class MockGdeltDevice
 			        	System.out.printf( "Data queue cleared\n" );
 			        	
 			        }// data queue is full
+					
+					System.out.printf("message processed\n" );
+					System.out.printf("dataQueue.size : %d\n", dataQueue.size() );
+					System.out.printf("aggregationStarted : %b\n", aggregationStarted );
+					System.out.printf("selectedState : %s\n", (selectedState == null ? "none" : selectedState.toString()) );
+					System.out.printf("possibleStates : %s\n", ( possibleStates == null ? "none" : possibleStates.toString()) );
+					System.out.printf("\n" );
+					
 				}// message for us
 				
 				// wait
@@ -374,6 +385,8 @@ public class MockGdeltDevice
 					e.printStackTrace();
 				}
 				*/
+				
+				
 			}// non-empty message
 				
 		}// while

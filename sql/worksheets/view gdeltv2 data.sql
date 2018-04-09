@@ -1,1 +1,3 @@
 SELECT * FROM gdeltv2;
+
+SELECT COUNT(*) FROM gdeltv2;
