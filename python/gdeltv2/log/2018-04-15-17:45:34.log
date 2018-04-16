@@ -1,0 +1,47 @@
+platform :  Darwin
+dt :  2018-04-15 17:45:43
+zmq context created
+zmq socket created
+Connect succeeded
+..............................................................................................................................................................................
+sending to ZeroMQ
+latest values for SP :  {'dt': '2018-04-15 17:45:43', 'peer': 25, 'gkgrecordid': '20180415154500-1551', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'SP', 'AvgTone': 1.4336917562724}
+data sent
+latest values for FR :  {'dt': '2018-04-15 17:45:43', 'peer': 9, 'gkgrecordid': '20180415154500-1596', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'FR', 'AvgTone': 0.266666666666667}
+data sent
+latest values for PL :  {'dt': '2018-04-15 17:45:43', 'peer': 21, 'gkgrecordid': '20180415154500-1621', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'PL', 'AvgTone': -3.7711313394018195}
+data sent
+latest values for EI :  {'dt': '2018-04-15 17:45:43', 'peer': 5, 'gkgrecordid': '20180415154500-1642', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'EI', 'AvgTone': -0.772200772200772}
+data sent
+latest values for UK :  {'dt': '2018-04-15 17:45:43', 'peer': 28, 'gkgrecordid': '20180415154500-1698', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'UK', 'AvgTone': 5.49450549450549}
+data sent
+latest values for BE :  {'dt': '2018-04-15 17:45:43', 'peer': 2, 'gkgrecordid': '20180415154500-1020', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'BE', 'AvgTone': 0.512820512820513}
+data sent
+latest values for HU :  {'dt': '2018-04-15 17:45:43', 'peer': 13, 'gkgrecordid': '20180415154500-1029', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'HU', 'AvgTone': 2.46575342465753}
+data sent
+latest values for IT :  {'dt': '2018-04-15 17:45:43', 'peer': 14, 'gkgrecordid': '20180415154500-1561', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'IT', 'AvgTone': 0.0}
+data sent
+latest values for EN :  {'dt': '2018-04-15 17:45:43', 'peer': 6, 'gkgrecordid': '20180415154500-190', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'EN', 'AvgTone': -1.4767932489451499}
+data sent
+latest values for SZ :  {'dt': '2018-04-15 17:45:43', 'peer': 27, 'gkgrecordid': '20180415154500-226', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'SZ', 'AvgTone': 2.48344370860927}
+data sent
+latest values for LH :  {'dt': '2018-04-15 17:45:43', 'peer': 16, 'gkgrecordid': '20180415154500-282', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'LH', 'AvgTone': 1.12721417069243}
+data sent
+latest values for GM :  {'dt': '2018-04-15 17:45:43', 'peer': 10, 'gkgrecordid': '20180415154500-1689', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'GM', 'AvgTone': -2.47813411078717}
+data sent
+latest values for NL :  {'dt': '2018-04-15 17:45:43', 'peer': 20, 'gkgrecordid': '20180415154500-1636', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'NL', 'AvgTone': 1.12888052681091}
+data sent
+latest values for GR :  {'dt': '2018-04-15 17:45:43', 'peer': 11, 'gkgrecordid': '20180415154500-1494', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'GR', 'AvgTone': -2.493321460374}
+data sent
+latest values for AU :  {'dt': '2018-04-15 17:45:43', 'peer': 1, 'gkgrecordid': '20180415154500-1422', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'AU', 'AvgTone': 4.23728813559322}
+data sent
+latest values for SW :  {'dt': '2018-04-15 17:45:43', 'peer': 26, 'gkgrecordid': '20180415154500-742', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'SW', 'AvgTone': -6.153846153846151}
+data sent
+latest values for PO :  {'dt': '2018-04-15 17:45:43', 'peer': 22, 'gkgrecordid': '20180415154500-878', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'PO', 'AvgTone': -0.30864197530864196}
+data sent
+latest values for EZ :  {'dt': '2018-04-15 17:45:43', 'peer': 7, 'gkgrecordid': '20180415154500-1509', 'sqldate': 20180415, 'ActionGeo_CountryCode': 'EZ', 'AvgTone': 0.0}
+data sent
+waiting before closing socket
+wait completed
+disconnected from ZeroMQ
+completed

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# include
+. colors.sh
+
 # arguments
 sleep_time_minutes=$1
 
@@ -8,7 +11,7 @@ set -e
 set -u
 
 # verify arguments
-if [ -z $sleep_time_minutes ]; then echo "missing argument 1 : sleep_time_minutes"; exit 1; fi
+if [ -z $sleep_time_minutes ]; then orange "missing argument 1 : sleep_time_minutes -> 1"; sleep_time_minutes=1; fi
 echo "sleep_time_minutes : $sleep_time_minutes"
 
 # constants
