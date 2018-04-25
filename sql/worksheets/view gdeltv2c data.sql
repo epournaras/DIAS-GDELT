@@ -1,0 +1,5 @@
+SELECT * FROM gdeltv2c ORDER BY dt DESC;
+
+SELECT COUNT(*) FROM gdeltv2c;
+
+--TRUNCATE TABLE gdeltv2c;

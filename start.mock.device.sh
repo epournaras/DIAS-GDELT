@@ -42,7 +42,8 @@ classpath_lib="$eclipse_build_path:lib/postgresql-42.1.4.jar:lib/gson.jar:lib/je
 echo "classpath_lib : $classpath_lib"
 
 # test different flavors of the Mock Device
-mock_device_type="diasgdelt.MockGdeltDevice"		 
+#mock_device_type="diasgdelt.MockGdeltDevice"
+mock_device_type="diasgdelt.MockGdeltDeviceEventCount"		 
 echo "mock_device_type : $mock_device_type"
 
 # constants
