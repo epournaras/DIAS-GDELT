@@ -9,38 +9,37 @@ overall architecture:
 
 git clone https://github.com/epournaras/DIAS-GDELT.git
 
-# ---------------
-# launch sequence
-# ---------------
+# -----------------------------
+# launch sequence (Event Count)
+# -----------------------------
 
-# instructions for the minimum working 
+# instructions for launching a DIAS/GDELT aggregation network for counting number of events per country 
 
-# screen 1: persistence daemon
+# 1: persistence daemon
 cd DIAS-Logging-System
 ./start.daemon.sh
 
-# screen 2: Protopeer Bootstrap server and DIAS Gateway server
+# 2: Protopeer Bootstrap server and DIAS Gateway server
 cd DIAS-Development
 ./start.servers.sh
 
-# screen 3: DIAS Peers, including carrier nodes
+# 3: 30 DIAS Peers, one per country; no need for carrier nodes
 cd DIAS-Development
-./start.peers.sh 20 1 1 
+./start.aggregation.peers.sh 30 1 1
 
-# screen 4: GDELT BigQuery
-# choose one of the following
-a) mock (random) data
-cd /home/edward/DIAS-GDELT/python/rand
-./auto.update.sh 1 100
+# 4. start GDELT subscription
+cd /DIAS-GDELT/python/gdeltv2.count
+./auto.update.sh
 
-OR
-b) live data
-# TODO
+# 4.b optional: listen to GDELT messages
+# this displays messages processed by auto.update.sh to screen
+cd /DIAS-GDELT/python
+python3 zeromq.sub.py
 
-# screen 5: Mock devices
-# start 10 mock devices, in screen , starting at device number 1
+# 5: start GDELT Mock devices (Event Count)
+# start 30 mock devices
 cd DIAS-GDELT
-./start.mock.devices.sh 10 1 1
+./start.mock.devices.sh 30
 
 # -------------------------
 # installation instructions
