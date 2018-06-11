@@ -10,47 +10,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readme.txt">
+        <entry file="file://$PROJECT_DIR$/random.aggregates/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="266">
+              <caret line="14" column="68" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/update.sh">
+      <file leaf-file-name="random.aggregates.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="235">
+              <caret line="172" column="44" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="44" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gkg.publish.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gkg.publish.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gkg.persist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gkg.persist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="54" column="109" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="109" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gkg.parse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gkg.parse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1265" />
           </provider>
         </entry>
       </file>
@@ -61,6 +36,8 @@
       <find>tone</find>
       <find>AvgTone</find>
       <find>df</find>
+      <find>TODO</find>
+      <find>num_countries</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -70,6 +47,9 @@
         <option value="$PROJECT_DIR$/gkg.publish.py" />
         <option value="$PROJECT_DIR$/gkg.persist.py" />
         <option value="$PROJECT_DIR$/update.sh" />
+        <option value="$PROJECT_DIR$/random.aggregates/readme.txt" />
+        <option value="$PROJECT_DIR$/random.aggregates/random.aggregates.py.py" />
+        <option value="$PROJECT_DIR$/random.aggregates/random.aggregates.py" />
       </list>
     </option>
   </component>
@@ -89,6 +69,11 @@
             <path>
               <item name="gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
               <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
+              <item name="random.aggregates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -127,28 +112,28 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="DB Browser" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="DB Browser" order="2" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="right" id="FAQ Robot" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24982156" />
-      <window_info id="Project Explorer" />
-      <window_info id="Job Explorer" />
-      <window_info anchor="bottom" id="Console" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="right" id="FAQ Robot" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1391863" />
+      <window_info id="Project Explorer" order="2" />
+      <window_info id="Job Explorer" order="2" />
+      <window_info anchor="bottom" id="Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -162,29 +147,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gkg.parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1265" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gkg.publish.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="1710">
           <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gkg.persist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="760">
+          <caret line="54" column="109" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.parse.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.parse.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.publish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.persist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
           <caret line="54" column="109" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="109" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/update.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
+        <state relative-caret-position="19">
           <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="174" column="14" selection-start-line="174" selection-start-column="14" selection-end-line="174" selection-end-column="14" />
+          <folding>
+            <element signature="e#31#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random.aggregates/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.1/python_stubs/1132716555/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="172" column="44" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="44" />
         </state>
       </provider>
     </entry>
