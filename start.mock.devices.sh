@@ -2,20 +2,13 @@
 
 # launch N mock devices
 
-# launch_delay_seconds is a very important parameter, it sets a delay in seconds between each launched device
-# it's sole use is to ensure that each device is mapped to each peer with the same sequence number (device 1 with peer 1, device 2 with peer 2, etc)
-# this greatly simplifies debugging
-# without the delay, the mapping is (quasi)random as it depends on the arrival time of the peer request messages at the gateway
-
-# eag - 2018-03-16
+# eag - 2018-08-24
 
 
 # arguments
-number_of_devices=$1
-launch_delay_seconds=$2
+deployment=$1		# name of an existing path that contains a conf folder with the required configuration settings, e.g deployments/localhost
+number_of_devices=$2
 start_device_num=$3
-gateway_port=$4
-gateway_host=$5
 
 # includes
 . colors.sh
@@ -26,19 +19,21 @@ set -e
 set -u
 
 # verify arguments
-if [ -z $number_of_devices ]; then red "missing argument 1 : number_of_devices"; exit 1; fi
-if [ -z $launch_delay_seconds ]; then orange "missing argument 2 : launch_delay_seconds -> 1"; launch_delay_seconds=1; fi
+if [ -z $deployment ]; then red "missing argument 1 : deployment"; exit 1; fi
+if [ -z $number_of_devices ]; then red "missing argument 2 : number_of_devices"; exit 1; fi
 if [ -z $start_device_num ]; then orange "missing argument 3 : start_device_num -> 1"; start_device_num=1; fi
-if [ -z $gateway_port ]; then orange "missing argument 4 : gateway_port -> 3427"; gateway_port=3427; fi
-if [ -z $gateway_host ]; then orange "missing argument 5 : gateway_host -> localhost"; gateway_host=localhost; fi
 	
+echo "deployment : $deployment"
 echo "number_of_devices : $number_of_devices"
-echo "launch_delay_seconds : $launch_delay_seconds"
 echo "start_device_num : $start_device_num"
-echo "gateway_port : $gateway_port"
-echo "gateway_host : $gateway_host"
 
 # constants
+gdelt_config=$deployment/gdelt.conf
+echo "gdelt_config : $gdelt_config"
+
+launch_delay_seconds=1
+echo "launch_delay_seconds : $launch_delay_seconds"
+
 end_device_num=$(($start_device_num + $number_of_devices - 1))
 echo "end_device_num : $end_device_num"
 
@@ -51,6 +46,23 @@ if screen -ls | grep "$screenname" ; then
 	exit 1
 fi 
 
+
+# files + folders
+if [ ! -e $deployment ]; then red "deployment $deployment not found"; exit 1; fi
+if [ ! -e $gdelt_config ]; then red "gdelt_config $gdelt_config not found"; exit 1; fi
+
+
+# get gateway settings
+# get gateway ip and port
+deviceGatewayIP=`cat $gdelt_config | grep deviceGatewayIP | cut -f2 -d '='`
+echo "deviceGatewayIP : $deviceGatewayIP"
+
+deviceGatewayPort=`cat $gdelt_config | grep deviceGatewayPort | cut -f2 -d '='`
+echo "deviceGatewayPort : $deviceGatewayPort"
+
+if [ -z $deviceGatewayIP ]; then red "could not find deviceGatewayIP in $gdelt_config"; exit 1; fi
+if [ -z $deviceGatewayPort ]; then red "could not find deviceGatewayPort in $gdelt_config"; exit 1; fi
+
 # launch
 screen_exists=0
 for i in `seq 1 1 $number_of_devices`; do
@@ -61,10 +73,10 @@ for i in `seq 1 1 $number_of_devices`; do
 	echo -n "launching $title..."
 	if [ $screen_exists == 0 ]; then
 			# launch new screen session
-			screen -d -m -S $screenname -t "$title" bash start.mock.device.sh $device_num $gateway_port $gateway_host
+			screen -d -m -S $screenname -t "$title" bash start.mock.device.sh $device_num $deviceGatewayPort $deviceGatewayIP
 			screen_exists=1
 	else
-			screen -S $screenname -X screen -t "$title" bash start.mock.device.sh $device_num $gateway_port $gateway_host
+			screen -S $screenname -X screen -t "$title" bash start.mock.device.sh $device_num $deviceGatewayPort $deviceGatewayIP
 	fi
 	echo "ok"
 	

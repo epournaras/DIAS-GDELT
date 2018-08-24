@@ -52,7 +52,7 @@ public class MockGdeltDeviceEventCount
     {
         
         
-        System.out.printf("MockGdeltDeviceEventCount (2018-06-06)\n" );
+        System.out.printf("MockGdeltDeviceEventCount (2018-08-23)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
