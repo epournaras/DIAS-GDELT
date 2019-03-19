@@ -18,6 +18,10 @@ This DIAS application covers the 28 countries in Europe. Each country is represe
 # installation
 # ------------
 
+0. System Requirements
+	- OSX or Ubuntu >= 14
+	- 1Gb Ram
+
 1. setup the DIAS Logging System, that can be found at https://github.com/epournaras/DIAS-Logging-System.git
 
 2. install DIAS, that can be found at https://github.com/epournaras/DIAS-Development.git
