@@ -12,19 +12,58 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/random.aggregates/readme.txt">
+        <entry file="file://$PROJECT_DIR$/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="68" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="68" />
+            <state relative-caret-position="499">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="random.aggregates.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py">
+      <file leaf-file-name="watchdog.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/watchdog/watchdog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="172" column="44" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="44" />
+            <state relative-caret-position="380">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="last.download.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/watchdog/sql/last.download.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zeromq.sub.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zeromq.sub.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/update.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3857">
+              <caret line="203" column="35" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gkg.persist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gkg.persist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2223">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
+              <folding>
+                <element signature="e#31#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,18 +77,45 @@
       <find>df</find>
       <find>TODO</find>
       <find>num_countries</find>
+      <find>print</find>
+      <find>sleep</find>
+      <find>20</find>
+      <find>unable to</find>
+      <find>newsdir</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/gkg.publish.py" />
-        <option value="$PROJECT_DIR$/gkg.persist.py" />
-        <option value="$PROJECT_DIR$/update.sh" />
         <option value="$PROJECT_DIR$/random.aggregates/readme.txt" />
         <option value="$PROJECT_DIR$/random.aggregates/random.aggregates.py.py" />
         <option value="$PROJECT_DIR$/random.aggregates/random.aggregates.py" />
+        <option value="$PROJECT_DIR$/load.subscription.py" />
+        <option value="$PROJECT_DIR$/modules/subscription.py" />
+        <option value="$PROJECT_DIR$/modules/subscription_setting.py" />
+        <option value="$PROJECT_DIR$/subscriptions/test.ini" />
+        <option value="$PROJECT_DIR$/subscriptions/test2.ini" />
+        <option value="$PROJECT_DIR$/url.get.text.py.py" />
+        <option value="$PROJECT_DIR$/test/news.json" />
+        <option value="$PROJECT_DIR$/test/news.1.json" />
+        <option value="$PROJECT_DIR$/test/news.2.json" />
+        <option value="$PROJECT_DIR$/modules/subscriptions.py" />
+        <option value="$PROJECT_DIR$/load.subscriptions.py" />
+        <option value="$PROJECT_DIR$/text2json.py" />
+        <option value="$PROJECT_DIR$/gkg.news.publish.py" />
+        <option value="$PROJECT_DIR$/gkg.news.json.py" />
+        <option value="$PROJECT_DIR$/create.test.json.sh" />
+        <option value="$PROJECT_DIR$/slack.client.py" />
+        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/news.worker.sh" />
+        <option value="$PROJECT_DIR$/gkg.news.parse.py" />
+        <option value="$PROJECT_DIR$/update.sh" />
+        <option value="$PROJECT_DIR$/zeromq.sub.py" />
+        <option value="$PROJECT_DIR$/news.processor.py" />
+        <option value="$PROJECT_DIR$/url.get.text.py" />
+        <option value="$PROJECT_DIR$/gkg.persist.py" />
+        <option value="$PROJECT_DIR$/watchdog/sql/last.download.sql" />
       </list>
     </option>
   </component>
@@ -63,24 +129,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DIAS gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
               <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DIAS gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
               <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
               <item name="random.aggregates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DIAS gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
+              <item name="watchdog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DIAS gdeltv2.count" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gdeltv2.count" type="462c0819:PsiDirectoryNode" />
+              <item name="watchdog" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -139,7 +219,73 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gkg.news.parse.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.publish.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.json.py" />
+    <entry file="file://$PROJECT_DIR$/update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3857">
+          <caret line="203" column="35" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.persist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2223">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="e#31#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.worker.sh" />
+    <entry file="file://$PROJECT_DIR$/zeromq.sub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.processor.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.parse.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.publish.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.json.py" />
+    <entry file="file://$PROJECT_DIR$/update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3857">
+          <caret line="203" column="35" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url.get.text.py" />
+    <entry file="file://$PROJECT_DIR$/random.aggregates/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="68" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3002">
+          <caret line="172" column="44" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -160,9 +306,6 @@
           <caret line="54" column="109" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="109" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gkg.parse.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/update.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -171,47 +314,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gkg.parse.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gkg.publish.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gkg.persist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="54" column="109" selection-start-line="54" selection-start-column="99" selection-end-line="54" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="174" column="14" selection-start-line="174" selection-start-column="14" selection-end-line="174" selection-end-column="14" />
-          <folding>
-            <element signature="e#31#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py.py" />
     <entry file="file://$PROJECT_DIR$/random.aggregates/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -228,8 +331,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/random.aggregates/random.aggregates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="172" column="44" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="44" />
+        <state relative-caret-position="216">
+          <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/subscription.py" />
+    <entry file="file://$PROJECT_DIR$/load.subscription.py" />
+    <entry file="file://$PROJECT_DIR$/subscriptions/test.ini" />
+    <entry file="file://$PROJECT_DIR$/subscriptions/test2.ini" />
+    <entry file="file://$PROJECT_DIR$/gkg.publish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81">
+          <caret line="83" column="50" selection-start-line="80" selection-start-column="4" selection-end-line="83" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url.get.text.py.py" />
+    <entry file="file://$PROJECT_DIR$/test/news.1.json" />
+    <entry file="file://$PROJECT_DIR$/test/news.2.json" />
+    <entry file="file://$PROJECT_DIR$/modules/subscriptions.py" />
+    <entry file="file://$PROJECT_DIR$/load.subscriptions.py" />
+    <entry file="file://$PROJECT_DIR$/text2json.py" />
+    <entry file="file://$PROJECT_DIR$/create.test.json.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/subscription_setting.py" />
+    <entry file="file://$PROJECT_DIR$/slack.client.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.parse.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.publish.py" />
+    <entry file="file://$PROJECT_DIR$/gkg.news.json.py" />
+    <entry file="file://$PROJECT_DIR$/zeromq.sub.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.processor.py" />
+    <entry file="file://$PROJECT_DIR$/news.worker.sh" />
+    <entry file="file://$PROJECT_DIR$/url.get.text.py" />
+    <entry file="file://$PROJECT_DIR$/update.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3857">
+          <caret line="203" column="35" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gkg.persist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2223">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="e#31#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watchdog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watchdog/sql/last.download.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/watchdog/watchdog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
         </state>
       </provider>
     </entry>

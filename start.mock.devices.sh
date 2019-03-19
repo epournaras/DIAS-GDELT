@@ -62,6 +62,7 @@ echo "deviceGatewayPort : $deviceGatewayPort"
 
 if [ -z $deviceGatewayIP ]; then red "could not find deviceGatewayIP in $gdelt_config"; exit 1; fi
 if [ -z $deviceGatewayPort ]; then red "could not find deviceGatewayPort in $gdelt_config"; exit 1; fi
+	
 
 # launch
 screen_exists=0

@@ -25,6 +25,9 @@ echo "log : $log"
 downloaddir=downloads
 echo "downloaddir : $downloaddir"
 
+newsdir=news
+echo "newsdir : $newsdir"
+
 parseddir=parsed
 echo "parseddir : $parseddir"
 
@@ -93,6 +96,7 @@ fi
 # files + folders
 mkdir -p log
 mkdir -p $parseddir
+mkdir -p $newsdir
 mkdir -p $downloaddir
 
 rm -f $downloadstat
@@ -177,19 +181,18 @@ if [ ! -e $decompressed_file ]; then echo "decompressed_file $decompressed_file 
 
 # parse
 if [ $parse == 1 ]; then
-    outputfile=$parseddir/$decompressed_stem
-    echo "outputfile : $outputfile"
-
-    echo -n "parsing..."
-    python3 gkg.parse.py $decompressed_file $outputfile > $log 2>&1
+    
+	diasoutputfile=$parseddir/$decompressed_stem
+    echo -n "parsing DIAS -> $diasoutputfile..."
+    python3 gkg.parse.py $decompressed_file $diasoutputfile > $log 2>&1
     echo "ok"
-
+    
     # broadcast over zeromq
-    if [ ! -e $outputfile ]; then echo "$outputfile $outputfile not found"; exit 1; fi
+    if [ ! -e $diasoutputfile ]; then echo "$diasoutputfile $diasoutputfile not found"; exit 1; fi
 
     if [ $zeromq == 1 ]; then
-        echo -n "broadcasting over ZeroMQ..."
-        python3 gkg.publish.py $outputfile  > $log 2>&1
+        echo -n "broadcasting DIAS over ZeroMQ..."
+        python3 gkg.publish.py $diasoutputfile  > $log 2>&1
         echo "ok"
     else
         orange "skipping ZeroMQ broadcast"
@@ -199,7 +202,7 @@ if [ $parse == 1 ]; then
     # persist to database
     if [ $persist == 1 ]; then
         echo -n "persisting to database..."
-        python3 gkg.persist.py $outputfile  > $log 2>&1
+        python3 gkg.persist.py $diasoutputfile  > $log 2>&1
         echo "ok"
     else
         orange "skipping persist"

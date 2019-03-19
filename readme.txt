@@ -9,6 +9,24 @@ overall architecture:
 
 git clone https://github.com/epournaras/DIAS-GDELT.git
 
+
+# -----
+# plots
+# -----
+
+# plots are done in R
+
+# set constants
+db.host <- 78.46.75.138
+db.schema <- 'dias'
+diasNetworkId <- 0
+source_table <- 'aggregation_event_rrd'
+
+# source the following scripts
+read.dias.aggregates.R
+read.true.gdelt.sum.R
+plot.sum.rrd.gdelt.R
+
 # -----------------------------
 # launch sequence (Event Count)
 # -----------------------------
@@ -16,30 +34,35 @@ git clone https://github.com/epournaras/DIAS-GDELT.git
 # instructions for launching a DIAS/GDELT aggregation network for counting number of events per country 
 
 # 1: persistence daemon
+# gdelt daemon listens on C0:5433
+# writes to database C0:dias 
 cd DIAS-Logging-System
-./start.daemon.sh
+./start.daemon.sh deployments/gdelt
 
 # 2: Protopeer Bootstrap server and DIAS Gateway server
+# DIAS Gateway server listens on C0:3427
+# Protopeer server listens on C0:45000
 cd DIAS-Development
-./start.servers.sh
+./start.servers.sh deployments/gdelt
 
-# 3: 30 DIAS Peers, one per country; no need for carrier nodes
+# 3: 28 DIAS Peers, one per country; no need for carrier nodes
 cd DIAS-Development
-./start.aggregation.peers.sh 30 1 1
+./start.aggregation.peers.sh deployments/gdelt 28 1 1
 
 # 4. start GDELT subscription
-cd /DIAS-GDELT/python/gdeltv2.count
+cd DIAS-GDELT/python/gdeltv2.count
 ./auto.update.sh
 
 # 4.b optional: listen to GDELT messages
 # this displays messages processed by auto.update.sh to screen
-cd /DIAS-GDELT/python
+cd DIAS-GDELT/python
 python3 zeromq.sub.py
 
 # 5: start GDELT Mock devices (Event Count)
 # start 30 mock devices
+# will connect to Gateway on C0:3427
 cd DIAS-GDELT
-./start.mock.devices.sh 30
+ ./start.mock.devices.sh deployments/gdelt 28
 
 # -------------------------
 # installation instructions

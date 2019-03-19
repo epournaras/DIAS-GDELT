@@ -1,9 +1,0 @@
-platform :  Darwin
-dt :  2018-04-25 23:16:22
-zmq context created
-zmq socket created
-Connect succeeded
-......Traceback (most recent call last):
-  File "gkg.publish.py", line 106, in <module>
-    latest_values[ActionGeo_CountryCode] += 1
-TypeError: unsupported operand type(s) for +=: 'dict' and 'int'

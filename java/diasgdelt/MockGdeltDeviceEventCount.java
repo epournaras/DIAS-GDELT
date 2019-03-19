@@ -52,7 +52,7 @@ public class MockGdeltDeviceEventCount
     {
         
         
-        System.out.printf("MockGdeltDeviceEventCount (2018-08-23)\n" );
+        System.out.printf("MockGdeltDeviceEventCount (2019-03-14)\n" );
         if (args.length < 3) 
 		{
 			System.err.printf("usage: device.id gateway.port gateway.host\n" );
@@ -78,7 +78,7 @@ public class MockGdeltDeviceEventCount
         
         final int					peerTimeoutMs = -1,		// no timeout	
         							gdeltSelectedSubscribePort = 5555,		// subscribe to real-time GDELT data on this port
-        							possibleStatesSampleSize = 27,
+        							possibleStatesSampleSize = 24 * 4, 		// mod eag 2018-10-02: capture a full day, counting 4 updates per hour
         							numberPossibleStates = 9;
         
         System.out.printf("peerTimeoutMs : %d\n", peerTimeoutMs );
