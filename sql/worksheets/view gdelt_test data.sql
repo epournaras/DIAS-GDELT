@@ -1,4 +1,4 @@
-SELECT * FROM gdelt;
+SELECT * FROM gdelt_test ORDER BY seq_id DESC;
 
 SELECT COUNT(*) FROM gdelt;
 

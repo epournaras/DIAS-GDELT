@@ -13,7 +13,8 @@ SELECT * FROM gdelt_web_plot_history ORDER BY epoch DESC LIMIT 10;
 
 -- total uptime
 --EXPLAIN ANALYZE
-SELECT MIN(dt::date) FROM gdelt_web_plot_history;
+
+SELECT now() - MIN(dt) FROM gdelt_web_plot_history;
 
 
 -- retrieve an aribtrary time window

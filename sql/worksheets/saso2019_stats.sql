@@ -64,6 +64,8 @@ LEFT JOIN
   w_peer_aggregates p
   ON
   p.epoch = t.epoch
+ORDER BY 
+  epoch ASC
 ;
 
 -- msgs
